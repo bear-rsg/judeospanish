@@ -18,9 +18,9 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'grammars-under-threat.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'judeospanish.sqlite3'),
         'TEST': {
-            'NAME': os.path.join(BASE_DIR, 'grammars-under-threat_TEST.sqlite3'),
+            'NAME': os.path.join(BASE_DIR, 'judeospanish_TEST.sqlite3'),
         },
     }
 }

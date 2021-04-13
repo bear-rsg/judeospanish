@@ -1,5 +1,5 @@
 """
-WSGI config for grammars-under-threat project.
+WSGI config for judeospanish project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
