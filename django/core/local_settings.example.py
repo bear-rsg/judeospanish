@@ -17,15 +17,15 @@ SECRET_KEY = ''
 DEBUG = True/False
 
 # Set to ['*'] if in development, or specific IP addresses and domains if in production
-ALLOWED_HOSTS = ['*']/['grammars-under-threat.bham.ac.uk']
+ALLOWED_HOSTS = ['*']/['judeospanish.bham.ac.uk']
 
 # Set the database name below
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'grammars-under-threat.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'judeospanish.sqlite3'),
         'TEST': {
-            'NAME': os.path.join(BASE_DIR, 'grammars-under-threat_TEST.sqlite3'),
+            'NAME': os.path.join(BASE_DIR, 'judeospanish_TEST.sqlite3'),
         },
     }
 }
