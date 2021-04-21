@@ -106,31 +106,6 @@ main a {
 
 /* ---------- Welcome ---------- */
 
-#welcome-videobanner {
-    max-height: 40em;
-    overflow: hidden;
-}
-
-#welcome-videobanner-text {
-    position: relative;
-    left: 0;
-    width: 100%;
-    height: 5em;
-}
-
-#welcome-videobanner-text-title {
-    background: rgba(40, 55, 71, 0.5);
-    color: #E4C418;
-}
-
-#welcome-videobanner-text-tagline {
-    background: rgba(40, 55, 71, 0.5);
-}
-
-#welcome-videobanner video {
-    margin-top: -5em;
-}
-
 .twittertimeline-container {
     display: block;
     overflow: auto;
