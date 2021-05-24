@@ -26,7 +26,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    # 'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -79,7 +79,10 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-gettext_noop = lambda s: s
+
+def gettext_noop(s):
+    return s
+
 
 LANGUAGES = (
         ('en-gb', _('English')),
