@@ -1,5 +1,7 @@
 import os
 import sys
+import django.conf.locale
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,6 +26,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -71,14 +74,38 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 
 LANGUAGE_CODE = 'en-gb'
-
 TIME_ZONE = 'Europe/London'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
+
+
+def gettext_noop(s):
+    return s
+
+
+LANGUAGES = (
+        ('en-gb', _('English')),
+        ('ld', gettext_noop('Ladino')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'core/locale'),
+)
+
+EXTRA_LANG_INFO = {
+    'ld': {
+        'bidi': False,
+        'code': 'ld',
+        'name': 'Ladino',
+        'name_local': 'Ladino',
+    },
+}
+
+# Add custom languages not provided by Django
+
+LANG_INFO = dict(django.conf.locale.LANG_INFO, **EXTRA_LANG_INFO)
+django.conf.locale.LANG_INFO = LANG_INFO
 
 
 # Static files (CSS, JavaScript, Images)

@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block main %}
 
     <div class="container">
-        <h2>Welcome</h2>
+        <h2>{% trans 'WelcomeHeading' %}</h2>
         <p>
-            Text to go here
+            {% trans 'WelcomeMessage' %}
         </p>
     </div>
 
