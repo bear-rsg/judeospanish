@@ -22,8 +22,8 @@ class Location(models.Model):
     """
 
     name = models.CharField(max_length=150)
-    latitude = models.CharField(max_length=100, blank=True, null=True)
-    longitude = models.CharField(max_length=100, blank=True, null=True)
+    latitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
 
     # Admin fields
     admin_notes = models.TextField(blank=True, null=True)
@@ -53,7 +53,7 @@ class Story(models.Model):
 
     description = models.CharField(max_length=255)
     image = models.ImageField(upload_to='researchdata/letters', blank=True, null=True)
-    video_url = models.CharField(max_length=255, blank=True, null=True)
+    video_url = models.URLField(blank=True, null=True)
     location = models.ForeignKey(Location, on_delete=models.SET_NULL, blank=True, null=True)
     location_other = models.CharField(max_length=255, blank=True, null=True)
     native_speaker = models.ForeignKey(NativeSpeaker, on_delete=models.SET_NULL, blank=True, null=True)
