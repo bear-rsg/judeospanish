@@ -17,19 +17,12 @@ class LocationAdminView(admin.ModelAdmin):
     ordering = ('name',)
 
 
-class NativeSpeakerAdminView(admin.ModelAdmin):
-    list_display = ('name', 'admin_notes')
-    search_fields = ('name', 'admin_notes')
-    ordering = ('name',)
-
-
 class StoryAdminView(admin.ModelAdmin):
-    list_display = ('description', 'image', 'video_url', 'location', 'location_other', 'native_speaker')
+    list_display = ('description', 'image', 'video_url', 'location', 'location_other', 'knowledge_of_judeospanish')
     search_fields = ('description', 'video_url', 'location_other')
     ordering = ('-id',)
 
 
 admin.site.register(models.Language, LanguageAdminView)
 admin.site.register(models.Location, LocationAdminView)
-admin.site.register(models.NativeSpeaker, NativeSpeakerAdminView)
 admin.site.register(models.Story, StoryAdminView)

@@ -32,31 +32,25 @@ class Location(models.Model):
         return self.name
 
 
-class NativeSpeaker(models.Model):
-    """
-    Whether the user is a native speaker of Judeo Spanish or not
-    """
-
-    name = models.CharField(max_length=150)
-
-    # Admin fields
-    admin_notes = models.TextField(blank=True, null=True)
-
-    def __str__(self):
-        return self.name
-
-
 class Story(models.Model):
     """
     A Story that a member of public shares with the project
     """
+
+    class KnowledgeOfJudeoSpanish(models.TextChoices):
+        """
+        Choices of levels of knowledge of Judeo-Spanish
+        """
+        NATIVE = 'NTV', "I learned Judeo-Spanish as a native/home language in childhood"
+        LATER = 'LTR', "I learned Judeo-Spanish as a non-native language later in life"
+        NEVER = 'NVR', "I've never learnt Judeo-Spanish"
 
     description = models.CharField(max_length=255)
     image = models.ImageField(upload_to='researchdata/letters', blank=True, null=True)
     video_url = models.URLField(blank=True, null=True)
     location = models.ForeignKey(Location, on_delete=models.SET_NULL, blank=True, null=True)
     location_other = models.CharField(max_length=255, blank=True, null=True)
-    native_speaker = models.ForeignKey(NativeSpeaker, on_delete=models.SET_NULL, blank=True, null=True)
+    knowledge_of_judeospanish = models.CharField(max_length=3, choices=KnowledgeOfJudeoSpanish.choices)
     languages = models.ManyToManyField(Language, related_name="story", blank=True)
 
     # Admin fields
