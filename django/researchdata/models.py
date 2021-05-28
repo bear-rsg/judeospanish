@@ -50,7 +50,10 @@ class Story(models.Model):
     video_url = models.URLField(blank=True, null=True)
     location = models.ForeignKey(Location, on_delete=models.SET_NULL, blank=True, null=True)
     location_other = models.CharField(max_length=255, blank=True, null=True)
-    knowledge_of_judeospanish = models.CharField(max_length=3, choices=KnowledgeOfJudeoSpanish.choices)
+    knowledge_of_judeospanish = models.CharField(max_length=3,
+                                                 choices=KnowledgeOfJudeoSpanish.choices,
+                                                 blank=True,
+                                                 null=True)
     languages = models.ManyToManyField(Language, related_name="story", blank=True)
 
     # Admin fields
