@@ -70,6 +70,18 @@
                             {% trans 'About' %}
                         </a>
                     </li>
+                    <!-- Stories - List -->
+                    <li class="nav-item">
+                        <a class="nav-link{% if request.path == "/stories/list/" %} active{% endif %}" href="{% url 'story-list' %}">
+                            {% trans 'Stories' %}
+                        </a>
+                    </li>
+                    <!-- Stories - Create -->
+                    <li class="nav-item">
+                        <a class="nav-link{% if request.path == "/stories/create/" %} active{% endif %}" href="{% url 'story-create' %}">
+                            {% trans 'Share' %}
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
