@@ -17,26 +17,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: core/settings.py:93
-msgid "English"
-msgstr "English"
-
-#: core/settings.py:94
-msgid "Ladino"
-msgstr "Ladino"
-
-#: core/templates/base.html:64
-msgid "Welcome"
-msgstr "WelcomeLadino"
-
-#: core/templates/base.html:70
-msgid "About"
-msgstr "AboutLadino"
-
-#: core/templates/base.html:76
-msgid "Stories"
+#: researchdata/forms.py:13
+msgid "Share your story"
 msgstr ""
 
-#: core/templates/base.html:82
-msgid "Share"
+#: researchdata/forms.py:14
+msgid "YouTube video link"
+msgstr ""
+
+#: researchdata/forms.py:15
+msgid "e.g. https://youtube.com/examplevideo"
+msgstr ""
+
+#: researchdata/forms.py:16
+msgid "Location (if not available above)"
+msgstr ""
+
+#: researchdata/forms.py:17
+msgid "Knowledge of Judeo-Spanish"
+msgstr ""
+
+#: researchdata/forms.py:18
+msgid "Languages known"
+msgstr ""
+
+#: researchdata/forms.py:21
+msgid "Select all that apply"
 msgstr ""

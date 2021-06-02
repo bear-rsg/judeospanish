@@ -8,6 +8,8 @@ urlpatterns = i18n_patterns(
 
     # General app's urls
     path('', include('general.urls')),
+    # Research data app's urls
+    path('stories/', include('researchdata.urls')),
     # Django admin urls
     path('dashboard/', admin.site.urls),
     # Don't show the default language in the URL

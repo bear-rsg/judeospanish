@@ -16,6 +16,10 @@ SECRET_KEY = ''
 # Set to True if in development, or False is in production
 DEBUG = True/False
 
+# Create Google RECAPTCHA public and private keys: https://www.google.com/recaptcha/
+RECAPTCHA_PUBLIC_KEY = ''
+RECAPTCHA_PRIVATE_KEY = ''
+
 # Set to ['*'] if in development, or specific IP addresses and domains if in production
 ALLOWED_HOSTS = ['*']/['judeospanish.bham.ac.uk']
 

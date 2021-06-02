@@ -70,3 +70,4 @@ class Story(models.Model):
     def __str__(self):
         if self.location:
             return f"A story from {self.location}: {textwrap.shorten(self.description, width=40, placeholder='...')}"
+        return f"A story: {textwrap.shorten(self.description, width=40, placeholder='...')}"
