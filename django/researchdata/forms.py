@@ -9,17 +9,17 @@ class StoryCreateForm(forms.ModelForm):
     """
 
     description = forms.CharField(widget=forms.Textarea(),
-                                 label='Share your story')
+                                  label='Share your story')
     video_url = forms.URLField(label='YouTube video link',
                                help_text='e.g. https://youtube.com/examplevideo')
     location_other = forms.CharField(label='Location (if not available above)')
     knowledge_of_judeospanish = forms.CharField(label='Knowledge of Judeo-Spanish')
     languages = forms.ModelMultipleChoiceField(label='Languages known',
-                                               queryset= models.Language.objects,
+                                               queryset=models.Language.objects,
                                                widget=forms.CheckboxSelectMultiple,
                                                help_text='Select all that apply')
 
-    # Google ReCaptcha
+    # Google ReCaptcha
     captcha = ReCaptchaField(widget=ReCaptchaV3, label='')
 
     class Meta:
