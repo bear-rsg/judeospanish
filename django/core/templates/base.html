@@ -94,6 +94,39 @@
             </div>
         </main>
 
+        <!-- Language -->
+        <div id="language-show">
+            <i class="fas fa-globe-americas"></i>
+        </div>
+        <div id="language-popup">
+            <p>
+                Choose your language:
+            </p>
+            <ul id="lang-options" class="navbar-nav">
+                {% get_available_languages as languages %}
+                {% for lang_code, lang_name in languages %}
+                    {% language lang_code %}
+                    <li class="nav-item lang{% if LANGUAGE_CODE == lang_code %}-active active{% endif %} {{ LANGUAGE_CODE }}">
+                        {% if request.resolver_match.url_name == 'transcribe' or request.resolver_match.url_name == 'training' %}
+                        <a href="{% url request.resolver_match.url_name transcription_id %}">{{ lang_name }}</a>
+                        {% else %}
+                            {% if request.resolver_match.url_name == 'activate' %}
+                            <a href="{% url request.resolver_match.url_name uidb64 token %}">{{ lang_code|upper }}</a>
+                            {% else %}
+                                {% if request.resolver_match.url_name == 'password_reset_confirm' %}
+                                <a href="{% url request.resolver_match.url_name uidb64 token %}">{{ lang_name|upper }}</a>
+                                {% else %}
+                                <a href="{% url request.resolver_match.url_name %}">{{ lang_name|upper }}</a>
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    </li>
+                    {% endlanguage %}
+                {% endfor %}
+            </ul>
+        </div>
+
+
         <!-- Footer -->
         <footer class="container-fluid">
             <!-- Content -->
