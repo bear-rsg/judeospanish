@@ -13,6 +13,9 @@ SECRET_KEY = 'u6n(9&8g-3=6d1#jyp^#))you-h&y^-5y7*&hu)cpxzeu_7#j+'
 
 DEBUG = True
 
+RECAPTCHA_PUBLIC_KEY = ''
+RECAPTCHA_PRIVATE_KEY = ''
+
 ALLOWED_HOSTS = ['*']
 
 DATABASES = {

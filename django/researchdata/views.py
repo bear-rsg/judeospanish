@@ -1,5 +1,7 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, TemplateView
+from django.urls import reverse_lazy
 from . import models
+from . import forms
 
 
 class StoryCreateView(CreateView):
@@ -7,8 +9,16 @@ class StoryCreateView(CreateView):
     Class-based view to show the 'share your story' template
     """
     template_name = 'researchdata/story-create.html'
-    model = models.Story
-    fields = ('description',)
+    form_class = forms.StoryCreateForm
+    success_url = reverse_lazy('story-create-success')
+
+
+class StoryCreateSuccessTemplateView(TemplateView):
+    """
+    Class-based view to show the story create success template
+    """
+
+    template_name = 'researchdata/story-create-success.html'
 
 
 class StoryListView(ListView):

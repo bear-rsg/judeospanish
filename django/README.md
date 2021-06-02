@@ -13,6 +13,8 @@ The project is called 'judeospanish', but project files are stored in the 'core'
 Apps include:
 
 + general - this is for static, general sections of the website (e.g. cookies page, accessibility page, etc.) that don't require a data model
++ researchdata - this is for the collection of research data into the db, and the public sharing of this data via a web front end
++ captcha - this is a 3rd party plugin app to manage the captcha functionality in web forms. [Documentation](https://pypi.org/project/django-recaptcha/)
 
 
 ## Django Admin

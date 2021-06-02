@@ -5,7 +5,18 @@
 {% block main %}
 
     <div class="container">
-        Create
+
+        <h2>Share Your Story</h2>
+        <p>
+            Info about form here.
+        </p>
+
+        <form enctype="multipart/form-data" name="form" method="POST" action="{% url 'story-create' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="story-create-submit" class="btn btn-primary" type="submit">Submit</button>
+        </form>
+
     </div>
 
 {% endblock %}
