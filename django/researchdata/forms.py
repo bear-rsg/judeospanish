@@ -1,6 +1,7 @@
 from django import forms
 from . import models
 from captcha.fields import ReCaptchaField, ReCaptchaV3
+from django.utils.translation import ugettext_lazy as _
 
 
 class StoryCreateForm(forms.ModelForm):
@@ -9,15 +10,15 @@ class StoryCreateForm(forms.ModelForm):
     """
 
     description = forms.CharField(widget=forms.Textarea(),
-                                  label='Share your story')
-    video_url = forms.URLField(label='YouTube video link',
-                               help_text='e.g. https://youtube.com/examplevideo')
-    location_other = forms.CharField(label='Location (if not available above)')
-    knowledge_of_judeospanish = forms.CharField(label='Knowledge of Judeo-Spanish')
-    languages = forms.ModelMultipleChoiceField(label='Languages known',
+                                  label=_('Share your story'))
+    video_url = forms.URLField(label=_('YouTube video link'),
+                               help_text=_('e.g. https://youtube.com/examplevideo'))
+    location_other = forms.CharField(label=_('Location (if not available above)'))
+    knowledge_of_judeospanish = forms.CharField(label=_('Knowledge of Judeo-Spanish'))
+    languages = forms.ModelMultipleChoiceField(label=_('Languages known'),
                                                queryset=models.Language.objects,
                                                widget=forms.CheckboxSelectMultiple,
-                                               help_text='Select all that apply')
+                                               help_text=_('Select all that apply'))
 
     # Google ReCaptcha
     captcha = ReCaptchaField(widget=ReCaptchaV3, label='')

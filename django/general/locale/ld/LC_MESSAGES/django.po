@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-24 21:37+0100\n"
+"POT-Creation-Date: 2021-06-02 15:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/general/welcome.html:8
+#: general/templates/general/welcome.html:8
 msgid "WelcomeHeading"
 msgstr "Translated welcome in Ladino"
 
-#: templates/general/welcome.html:10
+#: general/templates/general/welcome.html:10
 msgid "WelcomeMessage"
 msgstr "Translated welcome message in Ladino"
