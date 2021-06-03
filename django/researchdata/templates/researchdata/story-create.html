@@ -11,7 +11,7 @@
             {% trans 'ShareIntro' %}
         </p>
 
-        <form enctype="multipart/form-data" name="form" method="POST" action="{% url 'story-create' %}">
+        <form id="story-create-form" enctype="multipart/form-data" name="form" method="POST" action="{% url 'story-create' %}">
             {% csrf_token %}
             {{ form.as_p }}
 

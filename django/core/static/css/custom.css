@@ -213,13 +213,30 @@ main a {
 
 /* ---------- Welcome ---------- */
 
-.twittertimeline-container {
-    display: block;
-    overflow: auto;
-    width: 30em;
-    max-width: 90%;
-    height: 40em;
-    margin: 0 auto;
+#welcome-banner {
+    /* https://www.pexels.com/photo/snow-light-dawn-landscape-6793721/ */
+	background: url('../images/bg.jpg');
+	background-size: cover;
+	background-position: top;
+	background-attachment: fixed;
+	background-color: #1a1a1a;
+    height: calc(100vh - 3em);
+}
+
+#welcome-banner-title {
+    text-align: center;
+    padding-top: 30vh;
+    font-size: 3.6em;
+    font-weight: 100;
+    opacity: 0.8;
+}
+
+#welcome-banner-tagline {
+    text-align: center;
+    opacity: 0.8;
+    margin-top: 1em;
+    font-size: 1.5em;
+    font-weight: 300;
 }
 
 /* ---------- About ---------- */
@@ -251,6 +268,15 @@ main a {
     width: 100%;
     height: calc(100vh - 5em);
     background: #1a1a1a;
+}
+
+/* ---------- Story Create/Share ---------- */
+
+#story-create-form input,
+#story-create-form textarea,
+#story-create-form select {
+    background: #AAA;
+    border: none;
 }
 
 /* ---------- Footer ---------- */
