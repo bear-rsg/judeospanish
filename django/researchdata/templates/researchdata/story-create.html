@@ -6,15 +6,19 @@
 
     <div class="container">
 
-        <h2>Share Your Story</h2>
+        <h2>{% trans 'ShareYourStory' %}</h2>
         <p>
-            Info about form here.
+            {% trans 'ShareIntro' %}
         </p>
 
         <form enctype="multipart/form-data" name="form" method="POST" action="{% url 'story-create' %}">
             {% csrf_token %}
             {{ form.as_p }}
-            <button id="story-create-submit" class="btn btn-primary" type="submit">Submit</button>
+
+            <button id="story-create-submit" type="submit">{% trans 'ShareSubmit' %}</button>
+            <div class="form-submit-notes">
+                {% trans 'ShareSubmitNotes' %}
+            </div>
         </form>
 
     </div>

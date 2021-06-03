@@ -53,6 +53,87 @@ h3 {
     border: none;
 }
 
+/* ---------- Forms ---------- */
+
+label {
+    display: block;
+    margin-bottom: 0;
+    margin-top: 2em;
+    font-size: 0.95em;
+}
+
+.helptext {
+    font-size: 0.9em;
+    color: #AAA;
+}
+
+.errorlist {
+    color: red;
+}
+
+input,
+textarea,
+select,
+button[type='submit'] {
+    width: 100%;
+    display: block;
+    padding: 0.3em;
+}
+
+input[type='file'] {
+    border: 1px solid white;
+}
+
+input[type='checkbox'] {
+    display: inline;
+    width: auto;
+}
+
+form ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+form ul li {
+    display: inline-block;
+}
+
+form ul li label {
+    margin: 0.3em 2em 0 0;
+    cursor: pointer;
+}
+
+form ul li label:hover {
+    color: #f39c12;
+}
+
+button[type='submit'],
+button[type='submit']:visited {
+    background: #f39c12;
+    border: none;
+    color: black;
+    font-weight: bold;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin: 3em 0 1em 0;
+}
+
+button[type='submit']:hover {
+    background: #b3740f;
+    color: black;
+}
+
+.form-submit-notes {
+    font-size: 0.9em;
+    color: #AAA;
+}
+
+
+
+
+
+
+
 /* ---------- Translation / Languages / i18n ---------- */
 
 #language-show {
@@ -175,10 +256,6 @@ main a {
     width: 100%;
     height: calc(100vh - 5em);
     background: #1a1a1a;
-}
-
-#stories-info {
-    margin-top: 3em;
 }
 
 /* ---------- Footer ---------- */
