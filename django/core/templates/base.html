@@ -107,7 +107,6 @@
                 {% for lang_code, lang_name in languages %}
                     {% language lang_code %}
                     <li class="nav-item lang{% if LANGUAGE_CODE == lang_code %}-active active{% endif %} {{ LANGUAGE_CODE }}">
-                        
                         <!-- Story detail pages require an ID in link -->
                         {% if request.resolver_match.url_name == 'story-detail' %}
                             <a href="{% url request.resolver_match.url_name story.id %}">{{ lang_name }}</a>
@@ -120,7 +119,6 @@
                 {% endfor %}
             </ul>
         </div>
-
 
         <!-- Footer -->
         <footer class="container-fluid">
