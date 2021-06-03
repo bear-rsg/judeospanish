@@ -37,10 +37,10 @@
         // Loop through stories in database, grouped by location
         {% for location in object_list %}
             // Create the HTML to appear in the marker popup box
-            var markerPopupHtml = `<strong>{{ location.name}}</strong>`;
+            var markerPopupHtml = `<div class="map-stories-location">{{ location.name}}</div>`;
             {% for story in location.story_set.all %}
                 {% if story.admin_published == True %}
-                    markerPopupHtml += `<a href="{% url 'story-detail' story.id %}">{{ story.description }}</a>`;
+                    markerPopupHtml += `<a class="map-stories-link" href="{% url 'story-detail' story.id %}" style="color: black;">{{ story.description|truncatechars:70 }}</a>`;
                 {% endif %}
             {% empty %}
                 markerPopupHtml += `<div>No stories to show</div>`;
