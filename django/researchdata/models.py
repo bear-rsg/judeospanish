@@ -58,7 +58,7 @@ class Story(models.Model):
 
     # Admin fields
     admin_notes = models.TextField(blank=True, null=True)
-    admin_published = models.BooleanField(default=True)
+    admin_published = models.BooleanField(default=False)
 
     # Metadata fields
     meta_lastupdated_datetime = models.DateTimeField(auto_now=True, verbose_name="Last Updated")

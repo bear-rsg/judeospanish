@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, TemplateView
+from django.views.generic import CreateView, ListView, TemplateView, DetailView
 from django.urls import reverse_lazy
 from . import models
 from . import forms
@@ -17,8 +17,15 @@ class StoryCreateSuccessTemplateView(TemplateView):
     """
     Class-based view to show the story create success template
     """
-
     template_name = 'researchdata/story-create-success.html'
+
+
+class StoryDetailView(DetailView):
+    """
+    Class-based view to show the story detail template
+    """
+    template_name = 'researchdata/story-detail.html'
+    queryset = models.Story.objects.filter(admin_published=True)
 
 
 class StoryListView(ListView):

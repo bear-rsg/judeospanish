@@ -38,8 +38,10 @@
         {% for location in object_list %}
             // Create the HTML to appear in the marker popup box
             var markerPopupHtml = `<strong>{{ location.name}}</strong>`;
-            {% for story in location.story_set.all %} 
-                markerPopupHtml += `<div>{{ story.description }}</div>`;
+            {% for story in location.story_set.all %}
+                {% if story.admin_published == True %}
+                    markerPopupHtml += `<a href="{% url 'story-detail' story.id %}">{{ story.description }}</a>`;
+                {% endif %}
             {% empty %}
                 markerPopupHtml += `<div>No stories to show</div>`;
             {% endfor %}
