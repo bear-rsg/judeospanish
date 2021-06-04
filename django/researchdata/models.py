@@ -43,9 +43,9 @@ class Story(models.Model):
         """
         NATIVE = 'NTV', "I learned Judeo-Spanish as a native/home language in childhood"
         LATER = 'LTR', "I learned Judeo-Spanish as a non-native language later in life"
-        NEVER = 'NVR', "I've never learnt Judeo-Spanish"
+        NEVER = 'NVR', "I don't know Judeo-Spanish"
 
-    description = models.CharField(max_length=255)
+    description = models.TextField()
     image = models.ImageField(upload_to='researchdata/letters', blank=True, null=True)
     video_url = models.URLField(blank=True, null=True)
     location = models.ForeignKey(Location, on_delete=models.SET_NULL, blank=True, null=True)
@@ -58,7 +58,7 @@ class Story(models.Model):
 
     # Admin fields
     admin_notes = models.TextField(blank=True, null=True)
-    admin_published = models.BooleanField(default=True)
+    admin_published = models.BooleanField(default=False)
 
     # Metadata fields
     meta_lastupdated_datetime = models.DateTimeField(auto_now=True, verbose_name="Last Updated")

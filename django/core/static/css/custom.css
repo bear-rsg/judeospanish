@@ -6,16 +6,16 @@ body {
     color: white;
     margin: 0;
     font-weight: 300;
-    background-color: #283747;
+    background-color: #1a1a1a;
 }
 
 a {
-    color: #E4C418;
+    color: #f39c12;
     font-weight: 500;
 }
 
 a:hover {
-    color: #DCC961;
+    color: #b3740f;
 }
 
 h1 {
@@ -23,14 +23,14 @@ h1 {
     margin: 0;
     padding: 0;
     line-height: 1em;
-    color: #E4C418;
+    color: #f39c12;
     font-weight: 200;
 }
 
 h2 {
     padding-top: 2em;
-    color: #E4C418;
-    font-weight: 500;
+    color: #f39c12;
+    font-weight: 300;
     text-align: center;
     font-size: 1.7em;
     margin: 1.5em 0 1em 0;
@@ -38,7 +38,7 @@ h2 {
 
 h3 {
     padding: 2em 0 0.5em 0;
-    color: #E4C418;
+    color: #f39c12;
     font-weight: 500;
     text-align: left;
     font-size: 1.5em;
@@ -53,10 +53,141 @@ h3 {
     border: none;
 }
 
+.youtube-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 0;
+    height: 0;
+    margin: 7em auto;
+}
+
+.youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------- Forms ---------- */
+
+label {
+    display: block;
+    margin-bottom: 0;
+    margin-top: 2em;
+    font-size: 0.95em;
+}
+
+.helptext {
+    font-size: 0.9em;
+    color: #AAA;
+}
+
+.errorlist {
+    color: red;
+}
+
+input,
+textarea,
+select,
+button[type='submit'] {
+    width: 100%;
+    display: block;
+    padding: 0.3em;
+}
+
+#story-create-form input,
+#story-create-form textarea,
+#story-create-form select {
+    background: #CCC;
+    border: none;
+}
+
+#story-create-form input[type='file'] {
+    border: 1px solid white;
+    background: none;
+}
+
+input[type='checkbox'] {
+    display: inline;
+    width: auto;
+}
+
+form ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+form ul li {
+    display: inline-block;
+}
+
+form ul li label {
+    margin: 0.3em 2em 0 0;
+    cursor: pointer;
+}
+
+form ul li label:hover {
+    color: #f39c12;
+}
+
+button[type='submit'],
+button[type='submit']:visited {
+    background: #f39c12;
+    border: none;
+    color: black;
+    font-weight: bold;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin: 3em 0 1em 0;
+}
+
+button[type='submit']:hover {
+    background: #b3740f;
+    color: black;
+}
+
+.form-submit-notes {
+    font-size: 0.9em;
+    color: #AAA;
+}
+
+
+/* ---------- Translation / Languages / i18n ---------- */
+
+#language-show {
+    z-index: 1000;
+    position: fixed;
+    bottom: 1em;
+    left: 0;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    font-size: 2.5em;
+    border-radius: 0 100% 100% 0;
+    background: #404040;
+    cursor: pointer;
+}
+
+#language-show:hover {
+    background: #f39c12;
+}
+
+#language-popup {
+    position: fixed;
+    bottom: 0.8em;
+    left: -15em;
+    width: 15em;
+    background: #404040;
+    color: white;
+    padding: 1em;
+    z-index: 1000;
+}
+
 /* ---------- Navigation ---------- */
 
 nav {
-    background: #283747;
+    background: #1a1a1a;
     text-transform: uppercase;
     vertical-align: middle;
 }
@@ -65,7 +196,7 @@ nav {
     display: inline-block;
     text-transform: capitalize;
     font-size: 1.6em;
-    color: #E4C418;
+    color: #f39c12;
 }
 
 .navbar-nav {
@@ -79,12 +210,12 @@ nav {
 }
 
 .nav-link.active {
-    color: #E4C418;
+    color: #f39c12;
 }
 
 nav a:hover,
 .dropdown-item:hover {
-    color: #E4C418;
+    color: #f39c12;
 }
 
 /* ---------- Main ---------- */
@@ -106,20 +237,44 @@ main a {
 
 /* ---------- Welcome ---------- */
 
-.twittertimeline-container {
-    display: block;
-    overflow: auto;
-    width: 30em;
-    max-width: 90%;
-    height: 40em;
-    margin: 0 auto;
+#welcome-banner {
+    /* https://www.pexels.com/photo/snow-light-dawn-landscape-6793721/ */
+	background: url('../images/bg.jpg');
+	background-size: cover;
+	background-position: top;
+	background-attachment: fixed;
+	background-color: #1a1a1a;
+    height: calc(100vh - 3em);
+}
+
+#welcome-banner-title {
+    text-align: center;
+    padding-top: 30vh;
+    font-size: 3.6em;
+    font-weight: 100;
+}
+
+#welcome-banner-title span {
+    opacity: 0.7;
+}
+
+#welcome-banner-title strong {
+    opacity: 1;
+}
+
+#welcome-banner-tagline {
+    text-align: center;
+    opacity: 0.7;
+    margin-top: 0.5em;
+    font-size: 1.5em;
+    font-weight: 300;
 }
 
 /* ---------- About ---------- */
 
 .team-member-name {
     margin-top: 3em;
-    color: #E4C418;
+    color: #f39c12;
     text-align: center;
     font-size: 1.3rem;
 }
@@ -135,7 +290,62 @@ main a {
     margin: 1em auto;
     width: 13em;
     border-radius: 100%;
-    border: 0.2rem solid #E4C418;
+    border: 0.2rem solid #f39c12;
+}
+
+/* ---------- Stories ---------- */
+
+#map-object {
+    width: 100%;
+    height: calc(100vh - 5em);
+    background: #1a1a1a;
+}
+
+.leaflet-popup-content-wrapper {
+    max-height: 20em;
+    overflow: scroll;
+    font-size: 1.3em;
+}
+
+.map-stories-location {
+    text-align: center;
+    margin-bottom: 0.4em;
+    font-size: 1.4em;
+    font-weight: bold;;
+}
+
+.map-stories-link {
+    display: block;
+    padding: 0.3em 0.5em;
+    border-bottom: 1px solid #DDD;
+    color: black;
+    
+}
+
+.map-stories-link:hover {
+    color: #f39c12;
+    background: orange;
+    text-decoration: none;
+}
+
+/* ---------- Story Detail ---------- */
+
+.story-location {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 4em 0 1em 0;
+    color: #f39c12;
+}
+
+.story-description {
+    font-size: 1.3em;
+    margin: 2em 0;
+}
+
+.story-image {
+    max-width: 50%;
+    display: block;
+    margin: 1em auto;
 }
 
 /* ---------- Footer ---------- */
@@ -151,10 +361,7 @@ footer {
 }
 
 footer a:hover {
-    color: #E4C418;
-
-
-
+    color: #f39c12;
 }
 
 /* ---------- Error Pages ---------- */

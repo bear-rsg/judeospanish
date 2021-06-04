@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block main %}
+
+    <div class="container">
+
+        <h2>{% trans 'ShareYourStory' %}</h2>
+        <p>
+            {% trans 'ShareIntro' %}
+        </p>
+
+        <form id="story-create-form" enctype="multipart/form-data" name="form" method="POST" action="{% url 'story-create' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button id="story-create-submit" type="submit">{% trans 'ShareSubmit' %}</button>
+            <div class="form-submit-notes">
+                {% trans 'ShareSubmitNotes' %}
+            </div>
+        </form>
+
+    </div>
+
+{% endblock %}

@@ -94,6 +94,32 @@
             </div>
         </main>
 
+        <!-- Language -->
+        <div id="language-show">
+            <i class="fas fa-globe-americas"></i>
+        </div>
+        <div id="language-popup">
+            <p>
+                Choose your language:
+            </p>
+            <ul id="lang-options" class="navbar-nav">
+                {% get_available_languages as languages %}
+                {% for lang_code, lang_name in languages %}
+                    {% language lang_code %}
+                    <li class="nav-item lang{% if LANGUAGE_CODE == lang_code %}-active active{% endif %} {{ LANGUAGE_CODE }}">
+                        <!-- Story detail pages require an ID in link -->
+                        {% if request.resolver_match.url_name == 'story-detail' %}
+                            <a href="{% url request.resolver_match.url_name story.id %}">{{ lang_name }}</a>
+                        <!-- All other pages -->
+                        {% else %}
+                            <a href="{% url request.resolver_match.url_name %}">{{ lang_name }}</a>
+                        {% endif %}
+                    </li>
+                    {% endlanguage %}
+                {% endfor %}
+            </ul>
+        </div>
+
         <!-- Footer -->
         <footer class="container-fluid">
             <!-- Content -->

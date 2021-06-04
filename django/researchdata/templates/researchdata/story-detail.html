@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block main %}
+
+    <div class="container">
+        <!-- Location -->
+        {% if object.location %}
+            <div class="story-location">{{ object.location }}</div>
+        {% elif object.location_other %}
+            <div class="story-location">{{ object.location_other }}</div>
+        {% endif %}
+        <!-- Description -->
+        <div class="story-description">{{ object.description }}</div>
+        <!-- Image -->
+        {% if object.image %}
+            <img class="story-image" src="{{ object.image.url }}" alt="Story image">
+        {% endif %}
+        <!-- Video -->
+        {% if object.video_url %}
+            <div class="story-video youtube-container">
+                <iframe width="560" height="315" src="{{ object.video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
