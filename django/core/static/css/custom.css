@@ -96,8 +96,16 @@ button[type='submit'] {
     padding: 0.3em;
 }
 
-input[type='file'] {
+#story-create-form input,
+#story-create-form textarea,
+#story-create-form select {
+    background: #CCC;
+    border: none;
+}
+
+#story-create-form input[type='file'] {
     border: 1px solid white;
+    background: none;
 }
 
 input[type='checkbox'] {
@@ -340,16 +348,6 @@ main a {
     margin: 1em auto;
 }
 
-
-/* ---------- Story Create/Share ---------- */
-
-#story-create-form input,
-#story-create-form textarea,
-#story-create-form select {
-    background: #AAA;
-    border: none;
-}
-
 /* ---------- Footer ---------- */
 
 footer {
@@ -364,9 +362,6 @@ footer {
 
 footer a:hover {
     color: #f39c12;
-
-
-
 }
 
 /* ---------- Error Pages ---------- */
