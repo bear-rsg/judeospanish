@@ -38,7 +38,8 @@ class LocationAdminView(admin.ModelAdmin):
 
 
 class StoryAdminView(admin.ModelAdmin):
-    list_display = ('description', 'image', 'video_url', 'location', 'location_other', 'knowledge_of_judeospanish', 'admin_published')
+    list_display = ('description', 'image', 'video_url', 'location',
+                    'location_other', 'knowledge_of_judeospanish', 'admin_published')
     search_fields = ('description', 'video_url', 'location_other')
     ordering = ('-id',)
     list_filter = ('admin_published',)
