@@ -23,4 +23,25 @@
 
     </div>
 
+    <script>
+        $(document).ready(function() {
+
+            // Toggle 'Location (other)' based on location
+            $('#id_location').on('change', function() {
+                if ($(this).val()) {
+                    $('#id_location_other').parent().hide();
+                } else {
+                    $('#id_location_other').parent().show();
+                }
+            }).trigger('change');
+
+            // Highlight labels of actively focused form elements
+            $("input, select, textarea").each(function(){
+                $(this).on('focus', function(){ $(this).prev().addClass('label-active'); });
+                $(this).on('focusout', function(){ $(this).prev().removeClass('label-active'); });
+            });
+
+        });
+    </script>
+
 {% endblock %}

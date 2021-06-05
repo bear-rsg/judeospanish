@@ -78,6 +78,10 @@ label {
     font-size: 0.95em;
 }
 
+label.label-active {
+    color: #f39c12;
+}
+
 .helptext {
     font-size: 0.9em;
     color: #AAA;
