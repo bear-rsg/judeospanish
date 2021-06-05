@@ -1,7 +1,8 @@
 from django.conf import settings
 from django.core.mail import send_mail
 from django.db import models
-import logging, textwrap
+import logging
+import textwrap
 
 logger = logging.getLogger(__name__)
 
