@@ -188,6 +188,10 @@ button[type='submit']:hover {
     z-index: 1000;
 }
 
+#lang-options li {
+    padding-bottom: 0.8em;
+}
+
 /* ---------- Navigation ---------- */
 
 nav {
