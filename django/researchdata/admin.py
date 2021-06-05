@@ -5,6 +5,26 @@ from . import models
 admin.site.site_header = 'Grammars of Judeo-Spanish: Admin Dashboard'
 
 
+def admin_publish_selected(modeladmin, request, queryset):
+    """
+    Sets all selected items in queryset to published
+    """
+    queryset.update(admin_published=True)
+
+
+admin_publish_selected.short_description = "Publish selected items (will appear on public site)"
+
+
+def admin_unpublish_selected(modeladmin, request, queryset):
+    """
+    Sets all selected items in queryset to not published
+    """
+    queryset.update(admin_published=False)
+
+
+admin_unpublish_selected.short_description = "unpublish selected items (will not appear on public site)"
+
+
 class LanguageAdminView(admin.ModelAdmin):
     list_display = ('name', 'admin_notes')
     search_fields = ('name', 'admin_notes')
@@ -18,9 +38,11 @@ class LocationAdminView(admin.ModelAdmin):
 
 
 class StoryAdminView(admin.ModelAdmin):
-    list_display = ('description', 'image', 'video_url', 'location', 'location_other', 'knowledge_of_judeospanish')
+    list_display = ('description', 'image', 'video_url', 'location', 'location_other', 'knowledge_of_judeospanish', 'admin_published')
     search_fields = ('description', 'video_url', 'location_other')
     ordering = ('-id',)
+    list_filter = ('admin_published',)
+    actions = (admin_publish_selected, admin_unpublish_selected)
 
 
 admin.site.register(models.Language, LanguageAdminView)
