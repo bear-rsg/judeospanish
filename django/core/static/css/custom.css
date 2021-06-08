@@ -103,7 +103,7 @@ button[type='submit'] {
 #story-create-form input,
 #story-create-form textarea,
 #story-create-form select {
-    background: #CCC;
+    background: #EEE;
     border: none;
 }
 
@@ -273,8 +273,6 @@ main a {
 #welcome-banner-tagline {
     text-align: center;
     opacity: 0.7;
-    margin-top: 0.5em;
-    font-size: 1.5em;
     font-weight: 300;
 }
 
