@@ -5,10 +5,6 @@ from researchdata import models
 def insert_languages(apps, schema_editor):
     """
     Inserts Language objects
-
-    n:
-EnglishJudeo-SpanishFrenchSpanishTurkishHebrew
- Other [fill in]
     """
 
     languages = ["English",
