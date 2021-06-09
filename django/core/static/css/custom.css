@@ -78,6 +78,10 @@ label {
     font-size: 0.95em;
 }
 
+label.label-active {
+    color: #f39c12;
+}
+
 .helptext {
     font-size: 0.9em;
     color: #AAA;
@@ -99,7 +103,7 @@ button[type='submit'] {
 #story-create-form input,
 #story-create-form textarea,
 #story-create-form select {
-    background: #CCC;
+    background: #EEE;
     border: none;
 }
 
@@ -184,6 +188,10 @@ button[type='submit']:hover {
     z-index: 1000;
 }
 
+#lang-options li {
+    padding-bottom: 0.8em;
+}
+
 /* ---------- Navigation ---------- */
 
 nav {
@@ -265,8 +273,6 @@ main a {
 #welcome-banner-tagline {
     text-align: center;
     opacity: 0.7;
-    margin-top: 0.5em;
-    font-size: 1.5em;
     font-weight: 300;
 }
 

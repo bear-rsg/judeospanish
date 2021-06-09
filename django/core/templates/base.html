@@ -50,7 +50,7 @@
         <!-- Navigation bar -->
         <nav class="navbar fixed-top navbar-expand-lg">
             <!-- Logo -->
-            <a class="navbar-brand" href="{% url 'welcome' %}"><h1>Grammars of <strong>Judeo-Spanish</strong></h1></a>
+            <a class="navbar-brand" href="{% url 'welcome' %}"><h1><span>Grammars of</span> <strong>Judeo-Spanish</strong></h1></a>
             <!-- Nav toggle button (for small screens) -->
             <button class="navbar-toggler" type="button" title="navbartoggle" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false">
                 <i class="fas fa-bars"></i>
@@ -60,25 +60,25 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Welcome -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/" %} active{% endif %}" href="{% url 'welcome' %}">
+                        <a class="nav-link{% if request.path == '/' %} active{% endif %}" href="{% url 'welcome' %}">
                             {% translate 'Welcome' %}
                         </a>
                     </li>
                     <!-- About -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/about/" %} active{% endif %}" href="{% url 'about' %}">
+                        <a class="nav-link{% if request.path == '/about/' %} active{% endif %}" href="{% url 'about' %}">
                             {% trans 'About' %}
                         </a>
                     </li>
-                    <!-- Stories - List -->
+                    <!-- Stories -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/stories/" %} active{% endif %}" href="{% url 'story-list' %}">
+                        <a class="nav-link{% if request.path|slice:':9' == '/stories/' and '/create/' not in request.path %} active{% endif %}" href="{% url 'story-list' %}">
                             {% trans 'Stories' %}
                         </a>
                     </li>
                     <!-- Stories - Create -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/stories/create/" %} active{% endif %}" href="{% url 'story-create' %}">
+                        <a class="nav-link{% if request.path|slice:':16' == '/stories/create/' %} active{% endif %}" href="{% url 'story-create' %}">
                             {% trans 'Share' %}
                         </a>
                     </li>
