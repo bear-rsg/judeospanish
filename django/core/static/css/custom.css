@@ -325,7 +325,6 @@ main a {
     padding: 0.3em 0.5em;
     border-bottom: 1px solid #DDD;
     color: black;
-    
 }
 
 .map-stories-link:hover {
@@ -352,6 +351,17 @@ main a {
     max-width: 50%;
     display: block;
     margin: 1em auto;
+}
+
+/* ---------- Story Create Success ---------- */
+
+#story-create-success-ok {
+    background: #f39c12;
+    padding: 0.5em 2em;
+    margin: 3em auto;
+    display: block;
+    width: 5em;
+    color: black;
 }
 
 /* ---------- Footer ---------- */

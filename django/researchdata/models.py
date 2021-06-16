@@ -4,7 +4,23 @@ from django.db import models
 import logging
 import textwrap
 
+from django.db.models.fields import CharField, EmailField
+
 logger = logging.getLogger(__name__)
+
+
+class DataUse(models.Model):
+    """
+    The ways in which collected data can be used by the research team
+    """
+
+    name = models.CharField(max_length=255)
+
+    # Admin fields
+    admin_notes = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Language(models.Model):
@@ -61,14 +77,19 @@ class Story(models.Model):
                                                  blank=True,
                                                  null=True)
     languages = models.ManyToManyField(Language, related_name="story", blank=True)
+    data_use_agreements = models.ManyToManyField(DataUse, related_name="story", blank=True)
+
+    # Author info
+    author_name = CharField(max_length=100, blank=True, null=True)
+    author_email = EmailField(blank=True, null=True)
 
     # Admin fields
     admin_notes = models.TextField(blank=True, null=True)
     admin_published = models.BooleanField(default=False)
 
     # Metadata fields
+    meta_created_datetime = models.DateTimeField(auto_now_add=True, verbose_name="Created")
     meta_lastupdated_datetime = models.DateTimeField(auto_now=True, verbose_name="Last Updated")
-    meta_firstpublished_datetime = models.DateTimeField(blank=True, null=True, verbose_name="First Published")
 
     class Meta:
         verbose_name_plural = 'Stories'
@@ -78,6 +99,10 @@ class Story(models.Model):
             return f"A story from {self.location}: {textwrap.shorten(self.description, width=40, placeholder='...')}"
         return f"A story: {textwrap.shorten(self.description, width=40, placeholder='...')}"
 
+    @property
+    def description_short(self):
+        return self.description if len(self.description) < 100 else (f'${self.description[:97]}...')
+
     def save(self, *args, **kwargs):
         """
         When a new model is saved:
@@ -86,7 +111,7 @@ class Story(models.Model):
         """
 
         # If this is a new answer
-        if self.meta_lastupdated_datetime is None:
+        if self.meta_created_datetime is None:
             # Send email alert to research team
             try:
                 send_mail("Grammars of Judeo-Spanish website: New story",

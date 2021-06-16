@@ -41,6 +41,10 @@
                 $(this).on('focusout', function(){ $(this).prev().removeClass('label-active'); });
             });
 
+            // Assign default values to certain fields
+            $('[name="data_use_agreements"]').prop('checked', true);
+
+
         });
     </script>
 
