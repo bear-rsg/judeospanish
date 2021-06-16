@@ -6,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class StoryCreateForm(forms.ModelForm):
     """
-    Form to specify fields in the story create form
+    A form for users to submit a 'Story'
     """
 
     description = forms.CharField(widget=forms.Textarea(attrs={'rows': 4}),
@@ -23,6 +23,17 @@ class StoryCreateForm(forms.ModelForm):
                                                widget=forms.CheckboxSelectMultiple,
                                                help_text=_('Select all that apply'),
                                                required=False)
+    author_name = forms.CharField(label=_('Name'),
+                                  help_text=_('Optional. Your name will not be displayed on the website.'),
+                                  required=False)
+    author_email = forms.EmailField(label=_('Email'),
+                                    help_text=_('Optional. Your email address will not be displayed on the website.'),
+                                    required=False)
+    data_use_agreements = forms.ModelMultipleChoiceField(label=_('I agree to my data being used for the following'),
+                                                         queryset=models.DataUse.objects,
+                                                         widget=forms.CheckboxSelectMultiple,
+                                                         help_text=_('Select all that apply'),
+                                                         required=False)
 
     # Google ReCaptcha
     captcha = ReCaptchaField(widget=ReCaptchaV3, label='')
@@ -35,4 +46,7 @@ class StoryCreateForm(forms.ModelForm):
                   'location',
                   'location_other',
                   'knowledge_of_judeospanish',
-                  'languages')
+                  'languages',
+                  'author_name',
+                  'author_email',
+                  'data_use_agreements')
