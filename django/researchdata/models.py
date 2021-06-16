@@ -3,7 +3,6 @@ from django.core.mail import send_mail
 from django.db import models
 import logging
 import textwrap
-from django.template.defaultfilters import truncatechars
 
 from django.db.models.fields import CharField, EmailField
 
