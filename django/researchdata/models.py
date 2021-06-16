@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.db import models
 import logging
 import textwrap
+from django.template.defaultfilters import truncatechars
 
 from django.db.models.fields import CharField, EmailField
 
@@ -98,6 +99,10 @@ class Story(models.Model):
         if self.location:
             return f"A story from {self.location}: {textwrap.shorten(self.description, width=40, placeholder='...')}"
         return f"A story: {textwrap.shorten(self.description, width=40, placeholder='...')}"
+
+    @property
+    def description_short(self):
+        return self.description if len(self.description) < 100 else (f'${self.description[:97]}...')
 
     def save(self, *args, **kwargs):
         """

@@ -22,7 +22,7 @@ def admin_unpublish_selected(modeladmin, request, queryset):
     queryset.update(admin_published=False)
 
 
-admin_unpublish_selected.short_description = "unpublish selected items (will not appear on public site)"
+admin_unpublish_selected.short_description = "Unpublish selected items (will not appear on public site)"
 
 
 class LanguageAdminView(admin.ModelAdmin):
@@ -38,11 +38,12 @@ class LocationAdminView(admin.ModelAdmin):
 
 
 class StoryAdminView(admin.ModelAdmin):
-    list_display = ('description', 'image', 'video_url', 'location',
+    list_display = ('description_short', 'image', 'video_url', 'location',
                     'location_other', 'knowledge_of_judeospanish', 'admin_published')
     search_fields = ('description', 'video_url', 'location_other')
     ordering = ('-id',)
     list_filter = ('admin_published',)
+    readonly_fields = ('meta_created_datetime', 'meta_lastupdated_datetime')
     actions = (admin_publish_selected, admin_unpublish_selected)
 
 
