@@ -90,7 +90,7 @@ class ParticipantCreateForm(forms.ModelForm):
                   'email',
                   'location_birth',
                   'location_birth_other',
-                  'location_current'
+                  'location_current',
                   'location_current_other',
                   'knowledge_of_judeospanish',
                   'name_of_judeospanish',

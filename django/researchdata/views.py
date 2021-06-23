@@ -35,3 +35,19 @@ class StoryListView(ListView):
     """
     template_name = 'researchdata/story-list.html'
     model = models.Location
+
+
+class ParticipantCreateView(CreateView):
+    """
+    Class-based view to show the 'share your participant' template
+    """
+    template_name = 'researchdata/participant-create.html'
+    form_class = forms.ParticipantCreateForm
+    success_url = reverse_lazy('participant-create-success')
+
+
+class ParticipantCreateSuccessTemplateView(TemplateView):
+    """
+    Class-based view to show the participant create success template
+    """
+    template_name = 'researchdata/participant-create-success.html'
