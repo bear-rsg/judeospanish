@@ -9,8 +9,6 @@ from django.db.models.fields import CharField, EmailField
 logger = logging.getLogger(__name__)
 
 
-
-
 class DataUse(models.Model):
     """
     The ways in which collected data can be used by the research team
@@ -134,7 +132,7 @@ class Story(models.Model):
 
 class ParticipationActivity(models.Model):
     """
-    The research activities that a Participant can state their interest in 
+    The research activities that a Participant can state their interest in
     """
 
     name = models.CharField(max_length=255)
@@ -159,22 +157,28 @@ class Participant(models.Model):
         LATER = 'LTR', "I learned Judeo-Spanish as a non-native language later in life"
         NEVER = 'NVR', "I don't know Judeo-Spanish"
 
-
     name = CharField(max_length=100, blank=True, null=True)
     email = EmailField(blank=True, null=True)
-    location_birth = models.ForeignKey(Location, related_name="participant_birth", on_delete=models.SET_NULL, blank=True, null=True)
+    location_birth = models.ForeignKey(Location,
+                                       related_name="participant_birth",
+                                       on_delete=models.SET_NULL,
+                                       blank=True,
+                                       null=True)
     location_birth_other = models.CharField(max_length=255, blank=True, null=True)
-    location_current = models.ForeignKey(Location, related_name="participant_current", on_delete=models.SET_NULL, blank=True, null=True)
+    location_current = models.ForeignKey(Location,
+                                         related_name="participant_current",
+                                         on_delete=models.SET_NULL,
+                                         blank=True,
+                                         null=True)
     location_current_other = models.CharField(max_length=255, blank=True, null=True)
     knowledge_of_judeospanish = models.CharField(max_length=3,
                                                  choices=KnowledgeOfJudeoSpanish.choices,
                                                  blank=True,
                                                  null=True)
     name_of_judeospanish = CharField(max_length=255, blank=True, null=True)
-    languages = models.ManyToManyField(Language, related_name="participant", blank=True)    
+    languages = models.ManyToManyField(Language, related_name="participant", blank=True)
     participation_activities = models.ManyToManyField(ParticipationActivity, related_name="participant", blank=True)
     comments = models.TextField()
-    
 
     # Admin fields
     admin_notes = models.TextField(blank=True, null=True)
@@ -182,7 +186,6 @@ class Participant(models.Model):
     # Metadata fields
     meta_created_datetime = models.DateTimeField(auto_now_add=True, verbose_name="Created")
     meta_lastupdated_datetime = models.DateTimeField(auto_now=True, verbose_name="Last Updated")
-
 
     def save(self, *args, **kwargs):
         """
@@ -204,4 +207,3 @@ class Participant(models.Model):
 
         # Save new object
         super().save(*args, **kwargs)
-    
