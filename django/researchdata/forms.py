@@ -50,3 +50,50 @@ class StoryCreateForm(forms.ModelForm):
                   'author_name',
                   'author_email',
                   'data_use_agreements')
+
+
+class ParticipantCreateForm(forms.ModelForm):
+    """
+    A form for users to volunteer as a 'Participant'
+    """
+
+    name = forms.CharField(label=_('Name'),
+                           help_text=_('Optional. Your name will not be displayed on the website.'),
+                           required=False)
+    email = forms.EmailField(label=_('Email'),
+                             help_text=_('Optional. Your email address will not be displayed on the website.'),
+                             required=False)
+    location_birth_other = forms.CharField(label=_('Location (if not available above)'),
+                                           required=False)
+    location_current_other = forms.CharField(label=_('Location (if not available above)'),
+                                             required=False)
+    knowledge_of_judeospanish = forms.ChoiceField(choices=models.Story.KnowledgeOfJudeoSpanish.choices,
+                                                  label=_('Knowledge of Judeo-Spanish'))
+    languages = forms.ModelMultipleChoiceField(label=_('Languages known'),
+                                               queryset=models.Language.objects,
+                                               widget=forms.CheckboxSelectMultiple,
+                                               help_text=_('Select all that apply'),
+                                               required=False)
+    participation_activities = forms.ModelMultipleChoiceField(label=_("I'm interested in participating in"),
+                                                              queryset=models.ParticipationActivity.objects,
+                                                              widget=forms.CheckboxSelectMultiple,
+                                                              help_text=_('Select all that apply'),
+                                                              required=False)
+    comments = forms.CharField(widget=forms.Textarea(attrs={'rows': 4}), label=_('Share your story'))
+
+    # Google ReCaptcha
+    captcha = ReCaptchaField(widget=ReCaptchaV3, label='')
+
+    class Meta:
+        model = models.Participant
+        fields = ('name',
+                  'email',
+                  'location_birth',
+                  'location_birth_other',
+                  'location_current',
+                  'location_current_other',
+                  'knowledge_of_judeospanish',
+                  'name_of_judeospanish',
+                  'languages',
+                  'participation_activities',
+                  'comments')

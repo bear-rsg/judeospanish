@@ -128,3 +128,82 @@ class Story(models.Model):
 
         # Save new object
         super().save(*args, **kwargs)
+
+
+class ParticipationActivity(models.Model):
+    """
+    The research activities that a Participant can state their interest in
+    """
+
+    name = models.CharField(max_length=255)
+
+    # Admin fields
+    admin_notes = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Participant(models.Model):
+    """
+    A member of the public who volunteers to be a Participant in the research project
+    """
+
+    class KnowledgeOfJudeoSpanish(models.TextChoices):
+        """
+        Choices of levels of knowledge of Judeo-Spanish
+        """
+        NATIVE = 'NTV', "I learned Judeo-Spanish as a native/home language in childhood"
+        LATER = 'LTR', "I learned Judeo-Spanish as a non-native language later in life"
+        NEVER = 'NVR', "I don't know Judeo-Spanish"
+
+    name = CharField(max_length=100, blank=True, null=True)
+    email = EmailField(blank=True, null=True)
+    location_birth = models.ForeignKey(Location,
+                                       related_name="participant_birth",
+                                       on_delete=models.SET_NULL,
+                                       blank=True,
+                                       null=True)
+    location_birth_other = models.CharField(max_length=255, blank=True, null=True)
+    location_current = models.ForeignKey(Location,
+                                         related_name="participant_current",
+                                         on_delete=models.SET_NULL,
+                                         blank=True,
+                                         null=True)
+    location_current_other = models.CharField(max_length=255, blank=True, null=True)
+    knowledge_of_judeospanish = models.CharField(max_length=3,
+                                                 choices=KnowledgeOfJudeoSpanish.choices,
+                                                 blank=True,
+                                                 null=True)
+    name_of_judeospanish = CharField(max_length=255, blank=True, null=True)
+    languages = models.ManyToManyField(Language, related_name="participant", blank=True)
+    participation_activities = models.ManyToManyField(ParticipationActivity, related_name="participant", blank=True)
+    comments = models.TextField()
+
+    # Admin fields
+    admin_notes = models.TextField(blank=True, null=True)
+
+    # Metadata fields
+    meta_created_datetime = models.DateTimeField(auto_now_add=True, verbose_name="Created")
+    meta_lastupdated_datetime = models.DateTimeField(auto_now=True, verbose_name="Last Updated")
+
+    def save(self, *args, **kwargs):
+        """
+        When a new model is saved:
+        - email the research team
+        """
+
+        # If this is a new answer
+        if self.meta_created_datetime is None:
+            # Send email alert to research team
+            try:
+                send_mail("Grammars of Judeo-Spanish website: New participant",
+                          "A new participant has registered their interest.",
+                          settings.DEFAULT_FROM_EMAIL,
+                          settings.NOTIFICATION_EMAIL,
+                          fail_silently=True)
+            except Exception:
+                logger.exception("Failed to send email")
+
+        # Save new object
+        super().save(*args, **kwargs)
