@@ -26,12 +26,21 @@
     <script>
         $(document).ready(function() {
 
-            // Toggle 'Location (other)' based on location
-            $('#id_location').on('change', function() {
+            // Toggle 'Location of birth (other)' based on location
+            $('#id_location_birth').on('change', function() {
                 if ($(this).val()) {
-                    $('#id_location_other').parent().hide();
+                    $('#id_location_birth_other').parent().hide();
                 } else {
-                    $('#id_location_other').parent().show();
+                    $('#id_location_birth_other').parent().show();
+                }
+            }).trigger('change');
+
+            // Toggle 'Current location (other)' based on location
+            $('#id_location_current').on('change', function() {
+                if ($(this).val()) {
+                    $('#id_location_current_other').parent().hide();
+                } else {
+                    $('#id_location_current_other').parent().show();
                 }
             }).trigger('change');
 
@@ -43,7 +52,6 @@
 
             // Assign default values to certain fields
             $('[name="data_use_agreements"]').prop('checked', true);
-
 
         });
     </script>

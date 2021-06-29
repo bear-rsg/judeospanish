@@ -63,9 +63,9 @@ class ParticipantCreateForm(forms.ModelForm):
     email = forms.EmailField(label=_('Email'),
                              help_text=_('Optional. Your email address will not be displayed on the website.'),
                              required=False)
-    location_birth_other = forms.CharField(label=_('Location of Birth (if not available above)'),
+    location_birth_other = forms.CharField(label=_('Location of birth (if not available above)'),
                                            required=False)
-    location_current_other = forms.CharField(label=_('Current Location (if not available above)'),
+    location_current_other = forms.CharField(label=_('Current location (if not available above)'),
                                              required=False)
     knowledge_of_judeospanish = forms.ChoiceField(choices=models.Story.KnowledgeOfJudeoSpanish.choices,
                                                   label=_('Knowledge of Judeo-Spanish'))
