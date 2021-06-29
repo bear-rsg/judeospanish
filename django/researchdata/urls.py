@@ -16,10 +16,10 @@ urlpatterns = [
          views.StoryCreateSuccessTemplateView.as_view(),
          name='story-create-success'),
     # Participant
-    path('getinvolved/',
+    path('participate/',
          views.ParticipantCreateView.as_view(),
          name='participant-create'),
-    path('getinvolved/success/',
+    path('participate/success/',
          views.ParticipantCreateSuccessTemplateView.as_view(),
          name='participant-create-success'),
 ]

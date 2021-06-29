@@ -163,13 +163,15 @@ class Participant(models.Model):
                                        related_name="participant_birth",
                                        on_delete=models.SET_NULL,
                                        blank=True,
-                                       null=True)
+                                       null=True,
+                                       verbose_name='Location of Birth')
     location_birth_other = models.CharField(max_length=255, blank=True, null=True)
     location_current = models.ForeignKey(Location,
                                          related_name="participant_current",
                                          on_delete=models.SET_NULL,
                                          blank=True,
-                                         null=True)
+                                         null=True,
+                                         verbose_name='Current Location')
     location_current_other = models.CharField(max_length=255, blank=True, null=True)
     knowledge_of_judeospanish = models.CharField(max_length=3,
                                                  choices=KnowledgeOfJudeoSpanish.choices,
