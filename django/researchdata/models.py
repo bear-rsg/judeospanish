@@ -177,7 +177,10 @@ class Participant(models.Model):
                                                  choices=KnowledgeOfJudeoSpanish.choices,
                                                  blank=True,
                                                  null=True)
-    name_of_judeospanish = CharField(max_length=255, blank=True, null=True)
+    name_of_judeospanish = CharField(max_length=255,
+                                     blank=True,
+                                     null=True,
+                                     verbose_name='By what name(s) do you call Judeo-Spanish?')
     languages = models.ManyToManyField(Language, related_name="participant", blank=True)
     participation_activities = models.ManyToManyField(ParticipationActivity, related_name="participant", blank=True)
     comments = models.TextField()

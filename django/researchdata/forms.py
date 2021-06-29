@@ -69,6 +69,7 @@ class ParticipantCreateForm(forms.ModelForm):
                                              required=False)
     knowledge_of_judeospanish = forms.ChoiceField(choices=models.Story.KnowledgeOfJudeoSpanish.choices,
                                                   label=_('Knowledge of Judeo-Spanish'))
+    name_of_judeospanish = forms.CharField(help_text='e.g. ladino, djudezmo, djudeoespanyol, djudeoespañol, haketiya')
     languages = forms.ModelMultipleChoiceField(label=_('Languages known'),
                                                queryset=models.Language.objects,
                                                widget=forms.CheckboxSelectMultiple,
