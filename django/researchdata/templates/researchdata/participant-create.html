@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block main %}
+
+    <div class="container">
+
+        <h2>{% trans 'Participate' %}</h2>
+        <p>
+            {% trans 'ParticipateIntro' %}
+        </p>
+
+        <form id="participate-create-form" enctype="multipart/form-data" name="form" method="POST" action="{% url 'participant-create' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button id="participant-create-submit" type="submit">{% trans 'ParticipateSubmit' %}</button>
+            <div class="form-submit-notes">
+                {% trans 'ParticipateSubmitNotes' %}
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+            // Toggle 'Location of birth (other)' based on location
+            $('#id_location_birth').on('change', function() {
+                if ($(this).val()) {
+                    $('#id_location_birth_other').parent().hide();
+                } else {
+                    $('#id_location_birth_other').parent().show();
+                }
+            }).trigger('change');
+
+            // Toggle 'Current location (other)' based on location
+            $('#id_location_current').on('change', function() {
+                if ($(this).val()) {
+                    $('#id_location_current_other').parent().hide();
+                } else {
+                    $('#id_location_current_other').parent().show();
+                }
+            }).trigger('change');
+
+            // Highlight labels of actively focused form elements
+            $("input, select, textarea").each(function(){
+                $(this).on('focus', function(){ $(this).prev().addClass('label-active'); });
+                $(this).on('focusout', function(){ $(this).prev().removeClass('label-active'); });
+            });
+
+            // Assign default values to certain fields
+            $('[name="data_use_agreements"]').prop('checked', true);
+
+        });
+    </script>
+
+{% endblock %}

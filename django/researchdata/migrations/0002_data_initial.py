@@ -32,6 +32,19 @@ def insert_languages(apps, schema_editor):
         models.Language(name=language).save()
 
 
+def insert_participation_activities(apps, schema_editor):
+    """
+    Inserts ParticipationActivity objects
+    """
+
+    activities = ["Interviews",
+                  "Questionnaires",
+                  "Events"]
+
+    for activity in activities:
+        models.ParticipationActivity(name=activity).save()
+
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -41,4 +54,5 @@ class Migration(migrations.Migration):
     operations = [
         migrations.RunPython(insert_datause),
         migrations.RunPython(insert_languages),
+        migrations.RunPython(insert_participation_activities),
     ]

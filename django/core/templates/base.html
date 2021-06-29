@@ -82,6 +82,12 @@
                             {% trans 'Share' %}
                         </a>
                     </li>
+                    <!-- Participate -->
+                    <li class="nav-item">
+                        <a class="nav-link{% if '/participate/' in request.path %} active{% endif %}" href="{% url 'participant-create' %}">
+                            {% trans 'Participate' %}
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>

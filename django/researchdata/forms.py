@@ -63,12 +63,14 @@ class ParticipantCreateForm(forms.ModelForm):
     email = forms.EmailField(label=_('Email'),
                              help_text=_('Optional. Your email address will not be displayed on the website.'),
                              required=False)
-    location_birth_other = forms.CharField(label=_('Location (if not available above)'),
+    location_birth_other = forms.CharField(label=_('Location of birth (if not available above)'),
                                            required=False)
-    location_current_other = forms.CharField(label=_('Location (if not available above)'),
+    location_current_other = forms.CharField(label=_('Current location (if not available above)'),
                                              required=False)
     knowledge_of_judeospanish = forms.ChoiceField(choices=models.Story.KnowledgeOfJudeoSpanish.choices,
                                                   label=_('Knowledge of Judeo-Spanish'))
+    name_of_judeospanish = forms.CharField(label=_('By what name(s) do you call Judeo-Spanish?'),
+                                           help_text='e.g. ladino, djudezmo, djudeoespanyol, djudeoespañol, haketiya')
     languages = forms.ModelMultipleChoiceField(label=_('Languages known'),
                                                queryset=models.Language.objects,
                                                widget=forms.CheckboxSelectMultiple,
