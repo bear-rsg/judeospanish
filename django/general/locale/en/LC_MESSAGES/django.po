@@ -70,7 +70,7 @@ msgstr ""
 msgid "AboutContact2"
 msgstr ""
 "If you're interested in getting involved in this project, please contact the "
-"Principal Investigator (Dr. Alice Corr) at a.corr(at)bham.ac.uk and/or "
+"Principal Investigator (Dr. Alice Corr) at a.corr@bham.ac.uk and/or "
 
 #: general/templates/general/about.html:21
 msgid "AboutContact3"
@@ -79,10 +79,9 @@ msgstr "register your interest here."
 #: general/templates/general/about.html:24
 msgid "AboutContact4"
 msgstr ""
-"For all other enquiries, please contact the Principal Investigator (Dr. "
-"Alice Corr) at a.corr(at)bham.ac.uk.You can also follow updates from the "
-"project on Twitter @linguafrancabhm.Postal address: Ashley Building, "
-"University of Birmingham, Edgbaston, B15 2TT, UK."
+"For all other enquiries, please contact the Principal Investigator (Dr. Alice Corr) at a.corr@bham.ac.uk"
+"<br><br>You can also follow updates from the project on Twitter <a href='https://twitter.com/linguafrancabhm'>@linguafrancabhm</a>."
+"<br><br>Postal address: Ashley Building, University of Birmingham, Edgbaston, B15 2TT, UK."
 
 #: general/templates/general/welcome.html:9
 msgid "ProjectTitle1"
