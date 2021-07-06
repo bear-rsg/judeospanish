@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block main %}
+
+    <div class="container">
+
+        <h2>{% translate 'ParticipateTitle' %}</h2>
+        <p>
+            {% translate 'ParticipateIntro1' %}
+            <a href="{% url 'story-create' %}">{% translate 'ParticipateIntro2' %}</a>
+            {% translate 'ParticipateIntro3' %}
+        </p>
+        <p>
+            {% translate 'ParticipateIntro4' %}
+        </p>
+        <p>
+            {% translate 'ParticipateIntro5' %}
+        </p>
+
+
+        <form id="participate-create-form" enctype="multipart/form-data" name="form" method="POST" action="{% url 'participant-create' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button id="participant-create-submit" type="submit">{% translate 'ParticipateSubmit' %}</button>
+            <div class="form-submit-notes">
+                {% translate 'ParticipateSubmitNotes' %}
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+            // Toggle 'Location of birth (other)' based on location
+            $('#id_location_birth').on('change', function() {
+                if ($(this).val()) {
+                    $('#id_location_birth_other').parent().hide();
+                } else {
+                    $('#id_location_birth_other').parent().show();
+                }
+            }).trigger('change');
+
+            // Toggle 'Current location (other)' based on location
+            $('#id_location_current').on('change', function() {
+                if ($(this).val()) {
+                    $('#id_location_current_other').parent().hide();
+                } else {
+                    $('#id_location_current_other').parent().show();
+                }
+            }).trigger('change');
+
+            // Highlight labels of actively focused form elements
+            $("input, select, textarea").each(function(){
+                $(this).on('focus', function(){ $(this).prev().addClass('label-active'); });
+                $(this).on('focusout', function(){ $(this).prev().removeClass('label-active'); });
+            });
+
+            // Assign default values to certain fields
+            $('[name="data_use_agreements"]').prop('checked', true);
+
+        });
+    </script>
+
+{% endblock %}

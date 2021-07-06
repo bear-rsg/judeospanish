@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block main %}
+
+    <div class="container">
+
+        <h2>{% translate 'ShareTitle' %}</h2>
+        <p>
+            {% translate 'ShareIntro' %}
+        </p>
+
+        <form id="story-create-form" enctype="multipart/form-data" name="form" method="POST" action="{% url 'story-create' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button id="story-create-submit" type="submit">{% translate 'ShareSubmit' %}</button>
+            <div class="form-submit-notes">
+                {% translate 'ShareSubmitNotes' %}
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+            // Toggle 'Location (other)' based on location
+            $('#id_location').on('change', function() {
+                if ($(this).val()) {
+                    $('#id_location_other').parent().hide();
+                } else {
+                    $('#id_location_other').parent().show();
+                }
+            }).trigger('change');
+
+            // Highlight labels of actively focused form elements
+            $("input, select, textarea").each(function(){
+                $(this).on('focus', function(){ $(this).prev().addClass('label-active'); });
+                $(this).on('focusout', function(){ $(this).prev().removeClass('label-active'); });
+            });
+
+            // Assign default values to certain fields
+            $('[name="data_use_agreements"]').prop('checked', true);
+
+
+        });
+    </script>
+
+{% endblock %}

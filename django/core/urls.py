@@ -1,10 +1,18 @@
+from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
 
     # General app's urls
     path('', include('general.urls')),
+    # Research data app's urls
+    path('', include('researchdata.urls')),
+    # Django admin urls
+    path('dashboard/', admin.site.urls),
+    # Don't show the default language in the URL
+    prefix_default_language=False
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

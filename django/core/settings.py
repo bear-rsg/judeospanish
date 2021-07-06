@@ -1,5 +1,7 @@
 import os
 import sys
+import django.conf.locale
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -16,7 +18,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    # captcha-notimeout is a custom app to override "captcha" to prevent 2 minute timeouts
+    # See: https://github.com/praekelt/django-recaptcha/issues/183
+    'captcha_notimeout',
+    'captcha',
     'general',
+    'researchdata',
 ]
 
 MIDDLEWARE = [
@@ -24,6 +31,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -70,15 +78,39 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 
-LANGUAGE_CODE = 'en-gb'
-
+LANGUAGE_CODE = 'en'
 TIME_ZONE = 'Europe/London'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
+
+
+def gettext_noop(s):
+    return s
+
+
+LANGUAGES = (
+        ('en', _('English')),
+        ('ld', gettext_noop('Ladino')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'core/locale'),
+)
+
+EXTRA_LANG_INFO = {
+    'ld': {
+        'bidi': False,
+        'code': 'ld',
+        'name': 'Ladino',
+        'name_local': 'Ladino',
+    },
+}
+
+# Add custom languages not provided by Django
+
+LANG_INFO = dict(django.conf.locale.LANG_INFO, **EXTRA_LANG_INFO)
+django.conf.locale.LANG_INFO = LANG_INFO
 
 
 # Static files (CSS, JavaScript, Images)
@@ -92,6 +124,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/latest/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Import local_settings.py

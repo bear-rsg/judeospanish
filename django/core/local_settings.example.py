@@ -16,16 +16,29 @@ SECRET_KEY = ''
 # Set to True if in development, or False is in production
 DEBUG = True/False
 
+# Create Google RECAPTCHA public and private keys: https://www.google.com/recaptcha/
+RECAPTCHA_PUBLIC_KEY = ''
+RECAPTCHA_PRIVATE_KEY = ''
+
 # Set to ['*'] if in development, or specific IP addresses and domains if in production
-ALLOWED_HOSTS = ['*']/['grammars-under-threat.bham.ac.uk']
+ALLOWED_HOSTS = ['*']/['judeospanish.bham.ac.uk']
 
 # Set the database name below
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'grammars-under-threat.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'judeospanish.sqlite3'),
         'TEST': {
-            'NAME': os.path.join(BASE_DIR, 'grammars-under-threat_TEST.sqlite3'),
+            'NAME': os.path.join(BASE_DIR, 'judeospanish_TEST.sqlite3'),
         },
     }
 }
+
+# Email settings
+EMAIL_USE_TLS = False
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'hostnamehere'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'anemailaddress@bham.ac.uk'
+DEFAULT_FROM_EMAIL = 'anemailaddress@bham.ac.uk'
+NOTIFICATION_EMAIL = 'anemailaddress@bham.ac.uk'

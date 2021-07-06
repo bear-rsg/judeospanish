@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block main %}
+
+    <div class="container">
+
+        <!-- Project -->
+        {% translate 'AboutProject' %}
+
+        <!-- Project Team -->
+        {% translate 'AboutProjectTeam' %}
+
+        <!-- Contact Us -->
+        <h2>Contact Us</h2>
+        <p>
+            {% translate 'AboutContact1' %}
+        </p>
+        <p>
+            {% translate 'AboutContact2' %}
+            <a href="{% url 'participant-create' %}">{% translate 'AboutContact3' %}</a>
+        </p>
+        <p>
+            {% translate 'AboutContact4' %}
+        </p>
+
+    </div>
+    
+{% endblock %}

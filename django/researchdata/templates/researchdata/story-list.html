@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block main %}
+
+    <section>
+        <div id="map-stories" class="map-container">
+            <div id="map-object" class="location-map"></div>
+        </div>
+    </section>
+
+    <!-- Map - using Leaflet -->
+    <!-- Load Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Customise map on page -->
+    <script>
+
+        // Create a map object
+        var map = L.map('map-stories', { scrollWheelZoom: false, attributionControl: false }).setView(['27.920219', '-15.547437'], 3);
+        // Add tiles from MapBox to map object
+        L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibmlja255ciIsImEiOiJjajduNGptZWQxZml2MndvNjk4eGtwbDRkIn0.L0aWwfHlFJVGa-WOj7EHaA', {
+            maxZoom: 7,
+            minZoom: 2,
+            id: 'mapbox.dark',
+        }).addTo(map);
+
+        // Loop through stories in database, grouped by location
+        {% for location in object_list %}
+            // Create the HTML to appear in the marker popup box
+            var markerPopupHtml = `<div class="map-stories-location">{{ location.name}}</div>`;
+            {% for story in location.story_set.all %}
+                {% if story.admin_published == True %}
+                    markerPopupHtml += `<a class="map-stories-link" href="{% url 'story-detail' story.id %}" style="color: black;">{{ story.description|truncatechars:70 }}</a>`;
+                {% endif %}
+            {% empty %}
+                markerPopupHtml += `<div>No stories to show</div>`;
+            {% endfor %}
+            // Add a marker for each on the map with the necessary HTML
+            L.marker([{{ location.latitude }}, {{ location.longitude}}])
+                .addTo(map)
+                .bindPopup(markerPopupHtml);
+        {% endfor %}
+
+    </script>
+
+{% endblock %}

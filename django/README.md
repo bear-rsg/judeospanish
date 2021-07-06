@@ -1,11 +1,11 @@
-# Grammars Under Threat - Django Project
+# Grammars of Judeo-Spanish - Django Project
 
 This document is primarily designed for technical staff working on the development of the project (e.g. software engineers and system admins).
 
 
 ## Django Project
 
-The project is called 'grammars-under-threat', but project files are stored in the 'core' folder. Please refer to `core/settings.py` for further details
+The project is called 'judeospanish', but project files are stored in the 'core' folder. Please refer to `core/settings.py` for further details
 
 
 ## Django Apps
@@ -13,6 +13,8 @@ The project is called 'grammars-under-threat', but project files are stored in t
 Apps include:
 
 + general - this is for static, general sections of the website (e.g. cookies page, accessibility page, etc.) that don't require a data model
++ researchdata - this is for the collection of research data into the db, and the public sharing of this data via a web front end
++ captcha - this is a 3rd party plugin app to manage the captcha functionality in web forms. [Documentation](https://pypi.org/project/django-recaptcha/)
 
 
 ## Django Admin
@@ -68,7 +70,7 @@ Our websites must comply with accessibility regulations. See the [BEAR Accessibi
 
 ## Database
 
-The SQLite3 database used sits in the Django project root folder (alongside this README file). It is not included within the Git repo, so must instead be requested from the system admin. Once you have a copy of this database, give it a suitable name like `grammars-under-threat.sqlite3` and place in the `django/` directory (same directory that stores `manage.py`). Remember to name this database in `local_settings.py` (see Settings section of this document for more details)
+The SQLite3 database used sits in the Django project root folder (alongside this README file). It is not included within the Git repo, so must instead be requested from the system admin. Once you have a copy of this database, give it a suitable name like `judeospanish.sqlite3` and place in the `django/` directory (same directory that stores `manage.py`). Remember to name this database in `local_settings.py` (see Settings section of this document for more details)
 
 
 ## Settings
