@@ -78,7 +78,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 
-LANGUAGE_CODE = 'en-gb'
+LANGUAGE_CODE = 'en'
 TIME_ZONE = 'Europe/London'
 USE_I18N = True
 USE_L10N = True
@@ -90,7 +90,7 @@ def gettext_noop(s):
 
 
 LANGUAGES = (
-        ('en-gb', _('English')),
+        ('en', _('English')),
         ('ld', gettext_noop('Ladino')),
 )
 
