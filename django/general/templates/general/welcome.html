@@ -6,7 +6,7 @@
     
     <div id="welcome-banner">
         <div id="welcome-banner-title">
-            <span>Grammars of</span> <strong>Judeo-Spanish</strong>
+            <span>{% translate 'ProjectTitle1' %}</span> <strong>{% translate 'ProjectTitle2' %}</strong>
         </div>
         <div id="welcome-banner-tagline">
             A research project led by Dr Alice Corr at the University of Birmingham
@@ -14,9 +14,20 @@
     </div>
     
     <div class="container">
-        <h2>{% trans 'WelcomeHeading' %}</h2>
+        <h2>{% translate 'WelcomeHeading' %}</h2>
         <p>
-            {% trans 'WelcomeMessage' %}
+            {% translate 'WelcomeMessage1' %}
+        </p>
+        <p>
+            {% translate 'WelcomeMessage2' %}
+            <a href="{% url 'story-create' %}">{% translate 'WelcomeMessage3' %}</a>
+        </p>
+        <p>
+            {% translate 'WelcomeMessage4' %}
+            <a href="{% url 'participant-create' %}">{% translate 'WelcomeMessage5' %}</a>
+        </p>
+        <p>
+            <a href="{% url 'story-list' %}">{% translate 'WelcomeMessage6' %}</a>
         </p>
     </div>
 

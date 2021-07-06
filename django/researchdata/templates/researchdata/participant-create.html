@@ -6,18 +6,27 @@
 
     <div class="container">
 
-        <h2>{% trans 'Participate' %}</h2>
+        <h2>{% translate 'ParticipateTitle' %}</h2>
         <p>
-            {% trans 'ParticipateIntro' %}
+            {% translate 'ParticipateIntro1' %}
+            <a href="{% url 'story-create' %}">{% translate 'ParticipateIntro2' %}</a>
+            {% translate 'ParticipateIntro3' %}
         </p>
+        <p>
+            {% translate 'ParticipateIntro4' %}
+        </p>
+        <p>
+            {% translate 'ParticipateIntro5' %}
+        </p>
+
 
         <form id="participate-create-form" enctype="multipart/form-data" name="form" method="POST" action="{% url 'participant-create' %}">
             {% csrf_token %}
             {{ form.as_p }}
 
-            <button id="participant-create-submit" type="submit">{% trans 'ParticipateSubmit' %}</button>
+            <button id="participant-create-submit" type="submit">{% translate 'ParticipateSubmit' %}</button>
             <div class="form-submit-notes">
-                {% trans 'ParticipateSubmitNotes' %}
+                {% translate 'ParticipateSubmitNotes' %}
             </div>
         </form>
 

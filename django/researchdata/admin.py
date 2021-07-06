@@ -2,7 +2,7 @@ from django.contrib import admin
 from . import models
 
 # Set the title of the dashboard
-admin.site.site_header = 'Grammars of Judeo-Spanish: Admin Dashboard'
+admin.site.site_header = 'Linguistic Atlas of Judeo-Spanishes: Admin Dashboard'
 
 
 def admin_publish_selected(modeladmin, request, queryset):
