@@ -70,6 +70,7 @@ class Story(models.Model):
     image = models.ImageField(upload_to='researchdata/letters', blank=True, null=True)
     video_url = models.URLField(blank=True, null=True)
     video_url_embed = models.URLField(blank=True, null=True)
+    audio_player_embed_code = models.TextField(blank=True, null=True)
     location = models.ForeignKey(Location, on_delete=models.SET_NULL, blank=True, null=True)
     location_other = models.CharField(max_length=255, blank=True, null=True)
     knowledge_of_judeospanish = models.CharField(max_length=3,
