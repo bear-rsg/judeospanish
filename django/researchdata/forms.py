@@ -15,9 +15,9 @@ class StoryCreateForm(forms.ModelForm):
                                help_text=_('e.g. https://youtube.com/examplevideo'),
                                required=False)
     audio_player_embed_code = forms.CharField(label=_('SoundCloud audio embed code'),
-                                             help_text=_('e.g. Go to your SoundCloud audio file page, click Share, then click Embed, \
-                                             and then copy and paste the contents of the Code box here'),
-                                             required=False)
+                                              help_text=_('e.g. Go to your SoundCloud audio file page, click Share, then click Embed, \
+                                              and then copy and paste the contents of the Code box here'),
+                                              required=False)
     location_other = forms.CharField(label=_('Location (if not available above)'),
                                      required=False)
     knowledge_of_judeospanish = forms.ChoiceField(choices=models.Story.KnowledgeOfJudeoSpanish.choices,
