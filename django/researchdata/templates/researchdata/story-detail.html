@@ -17,8 +17,14 @@
                 <iframe width="560" height="315" src="{{ object.video_url_embed }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         {% endif %}
+        <!-- Audio -->
+        {% if object.audio_player_embed_code %}
+            <div class="story-audio">
+                {{ object.audio_player_embed_code | safe }}
+            </div>
+        {% endif %}
         <!-- Description -->
-        <div class="story-description">{{ object.description }}</div>
+        <div class="story-description">{{ object.description | linebreaks }}</div>
         <!-- Image -->
         {% if object.image %}
             <img class="story-image" src="{{ object.image.url }}" alt="Story image">
