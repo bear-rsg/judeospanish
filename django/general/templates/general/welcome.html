@@ -8,9 +8,6 @@
         <div id="welcome-banner-title">
             <span>{% translate 'ProjectTitle1' %}</span> <strong>{% translate 'ProjectTitle2' %}</strong>
         </div>
-        <div id="welcome-banner-tagline">
-            A research project led by Dr Alice Corr at the University of Birmingham
-        </div>
     </div>
     
     <div class="container">
@@ -27,7 +24,7 @@
             <a href="{% url 'participant-create' %}">{% translate 'WelcomeMessage5' %}</a>
         </p>
         <p>
-            <a href="{% url 'story-list' %}">{% translate 'WelcomeMessage6' %}</a>
+            <a href="{% url 'story-list' %}" id="welcome-enteratlas">{% translate 'WelcomeMessage6' %}</a>
         </p>
     </div>
 
