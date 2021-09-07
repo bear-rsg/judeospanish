@@ -141,6 +141,9 @@ class ParticipationActivity(models.Model):
     # Admin fields
     admin_notes = models.TextField(blank=True, null=True)
 
+    class Meta:
+        verbose_name_plural = 'Participation Activities'
+
     def __str__(self):
         return self.name
 

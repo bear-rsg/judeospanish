@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-06 10:49+0100\n"
+"POT-Creation-Date: 2021-09-07 15:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: researchdata/forms.py:13 researchdata/forms.py:84
-msgid "Share your story"
+#: researchdata/forms.py:13
+msgid "Story text"
 msgstr ""
 
 #: researchdata/forms.py:14
@@ -26,94 +26,161 @@ msgid "YouTube video link"
 msgstr ""
 
 #: researchdata/forms.py:15
-msgid "e.g. https://youtube.com/examplevideo"
+msgid ""
+"e.g. https://youtube.com/"
+"examplevideo.                                             Please remember to "
+"allow embedding permissions on your video."
 msgstr ""
 
-#: researchdata/forms.py:17
+#: researchdata/forms.py:18
+msgid "SoundCloud audio embed code"
+msgstr ""
+
+#: researchdata/forms.py:19
+msgid ""
+"e.g. Go to your SoundCloud audio file page, click Share, then click "
+"Embed,                                               and then copy and paste "
+"the contents of the Code box here"
+msgstr ""
+
+#: researchdata/forms.py:22
 msgid "Location (if not available above)"
 msgstr ""
 
-#: researchdata/forms.py:20 researchdata/forms.py:71
+#: researchdata/forms.py:25 researchdata/forms.py:75
 msgid "Knowledge of Judeo-Spanish"
 msgstr ""
 
-#: researchdata/forms.py:21 researchdata/forms.py:74
+#: researchdata/forms.py:26 researchdata/forms.py:79
 msgid "Languages known"
 msgstr ""
 
-#: researchdata/forms.py:24 researchdata/forms.py:35 researchdata/forms.py:77
-#: researchdata/forms.py:82
+#: researchdata/forms.py:29 researchdata/forms.py:42 researchdata/forms.py:82
+#: researchdata/forms.py:87
 msgid "Select all that apply"
 msgstr ""
 
-#: researchdata/forms.py:26 researchdata/forms.py:60
+#: researchdata/forms.py:31 researchdata/forms.py:68
 msgid "Name"
 msgstr ""
 
-#: researchdata/forms.py:27 researchdata/forms.py:61
+#: researchdata/forms.py:32
 msgid "Optional. Your name will not be displayed on the website."
 msgstr ""
 
-#: researchdata/forms.py:29 researchdata/forms.py:63
+#: researchdata/forms.py:34 researchdata/forms.py:69
 msgid "Email"
 msgstr ""
 
-#: researchdata/forms.py:30 researchdata/forms.py:64
+#: researchdata/forms.py:35
 msgid "Optional. Your email address will not be displayed on the website."
 msgstr ""
 
-#: researchdata/forms.py:32
-msgid "I agree to my data being used for the following"
+#: researchdata/forms.py:37
+msgid ""
+"I agree to the publication of my "
+"story                                                                   "
+"(recording and/or text and/or "
+"image)                                                                   in "
+"the following ways:"
 msgstr ""
 
-#: researchdata/forms.py:66
+#: researchdata/forms.py:70
 msgid "Location of birth (if not available above)"
 msgstr ""
 
-#: researchdata/forms.py:68
+#: researchdata/forms.py:72
 msgid "Current location (if not available above)"
 msgstr ""
 
-#: researchdata/forms.py:72
+#: researchdata/forms.py:76
 msgid "By what name(s) do you call Judeo-Spanish?"
 msgstr ""
 
-#: researchdata/forms.py:79
+#: researchdata/forms.py:84
 msgid "I'm interested in participating in"
 msgstr ""
 
+#: researchdata/forms.py:89
+msgid "Any other comments"
+msgstr ""
+
 #: researchdata/templates/researchdata/participant-create.html:9
-msgid "Participate"
+msgid "ParticipateTitle"
 msgstr ""
 
 #: researchdata/templates/researchdata/participant-create.html:11
-msgid "ParticipateIntro"
+msgid "ParticipateIntro1"
 msgstr ""
 
-#: researchdata/templates/researchdata/participant-create.html:18
+#: researchdata/templates/researchdata/participant-create.html:12
+msgid "ParticipateIntro2"
+msgstr ""
+
+#: researchdata/templates/researchdata/participant-create.html:13
+msgid "ParticipateIntro3"
+msgstr ""
+
+#: researchdata/templates/researchdata/participant-create.html:16
+msgid "ParticipateIntro4"
+msgstr ""
+
+#: researchdata/templates/researchdata/participant-create.html:19
+msgid "ParticipateIntro5"
+msgstr ""
+
+#: researchdata/templates/researchdata/participant-create.html:27
 msgid "ParticipateSubmit"
 msgstr ""
 
-#: researchdata/templates/researchdata/participant-create.html:20
-msgid "ParticipateSubmitNotes"
-msgstr ""
-
 #: researchdata/templates/researchdata/story-create.html:9
-msgid "ShareYourStory"
+msgid "ShareTitle"
 msgstr ""
 
 #: researchdata/templates/researchdata/story-create.html:11
 msgid "ShareIntro"
 msgstr ""
 
-#: researchdata/templates/researchdata/story-create.html:9
+#: researchdata/templates/researchdata/story-create.html:18
+msgid "ShareIntroVideoHeader"
+msgstr ""
+
+#: researchdata/templates/researchdata/story-create.html:22
+msgid "ShareIntroVideoBody"
+msgstr ""
+
+#: researchdata/templates/researchdata/story-create.html:28
+msgid "ShareIntroAudioHeader"
+msgstr ""
+
+#: researchdata/templates/researchdata/story-create.html:32
+msgid "ShareIntroAudioBody"
+msgstr ""
+
+#: researchdata/templates/researchdata/story-create.html:38
+msgid "ShareIntroNoButWantToHeader"
+msgstr ""
+
+#: researchdata/templates/researchdata/story-create.html:42
+msgid "ShareIntroNoButWantToBody"
+msgstr ""
+
+#: researchdata/templates/researchdata/story-create.html:48
+msgid "ShareIntroNoJustTextHeader"
+msgstr ""
+
+#: researchdata/templates/researchdata/story-create.html:52
+msgid "ShareIntroNoJustTextBody"
+msgstr ""
+
+#: researchdata/templates/researchdata/story-create.html:57
 msgid "ShareTitle2"
 msgstr ""
 
-#: researchdata/templates/researchdata/story-create.html:18
-msgid "ShareSubmit"
+#: researchdata/templates/researchdata/story-create.html:62
+msgid "ShareSubmitNotes"
 msgstr ""
 
-#: researchdata/templates/researchdata/story-create.html:20
-msgid "ShareSubmitNotes"
+#: researchdata/templates/researchdata/story-create.html:64
+msgid "ShareSubmit"
 msgstr ""
