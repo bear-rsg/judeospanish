@@ -12,7 +12,8 @@ class StoryCreateForm(forms.ModelForm):
     description = forms.CharField(widget=forms.Textarea(attrs={'rows': 7}),
                                   label=_('Story text'))
     video_url = forms.URLField(label=_('YouTube video link'),
-                               help_text=_('e.g. https://youtube.com/examplevideo. Please remember to allow embedding permissions on your video.'),
+                               help_text=_('e.g. https://youtube.com/examplevideo. \
+                                            Please remember to allow embedding permissions on your video.'),
                                required=False)
     audio_player_embed_code = forms.CharField(label=_('SoundCloud audio embed code'),
                                               help_text=_('e.g. Go to your SoundCloud audio file page, click Share, then click Embed, \
@@ -33,7 +34,9 @@ class StoryCreateForm(forms.ModelForm):
     author_email = forms.EmailField(label=_('Email'),
                                     help_text=_('Optional. Your email address will not be displayed on the website.'),
                                     required=False)
-    data_use_agreements = forms.ModelMultipleChoiceField(label=_("I agree to the publication of my story (recording and/or text and/or image) in the following ways:"),
+    data_use_agreements = forms.ModelMultipleChoiceField(label=_("I agree to the publication of my story \
+                                                                  (recording and/or text and/or image) \
+                                                                  in the following ways:"),
                                                          queryset=models.DataUse.objects,
                                                          widget=forms.CheckboxSelectMultiple,
                                                          help_text=_('Select all that apply'),
