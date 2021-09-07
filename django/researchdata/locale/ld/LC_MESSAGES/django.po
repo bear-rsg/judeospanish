@@ -106,6 +106,10 @@ msgstr ""
 msgid "ShareIntro"
 msgstr ""
 
+#: researchdata/templates/researchdata/story-create.html:9
+msgid "ShareTitle2"
+msgstr ""
+
 #: researchdata/templates/researchdata/story-create.html:18
 msgid "ShareSubmit"
 msgstr ""

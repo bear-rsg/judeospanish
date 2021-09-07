@@ -140,10 +140,15 @@ msgstr "<p>Have a story, recording or text you’d like to share? You can submit
 "<p>If you are unable to upload your recording to YouTube, you can <a href='https://birminghamcoaal.eu.qualtrics.com/jfe/form/SV_3vEQ8b2WWiHESXQ'>send us your file here</a>. Please note that this will take us longer to process.</p>"
 "<p><b>No, I just want to share my story as a text:</b><br>Please complete the form at the bottom of this page to submit your story to the atlas.</p>"
 
+#: researchdata/templates/researchdata/story-create.html:9
+msgid "ShareTitle2"
+msgstr "Your Story"
+
 #: researchdata/templates/researchdata/story-create.html:18
 msgid "ShareSubmit"
 msgstr "Submit"
 
 #: researchdata/templates/researchdata/story-create.html:20
 msgid "ShareSubmitNotes"
-msgstr ""
+msgstr "<p>Please read the <a href='/static/documents/participant-information-sheet.pdf' target='_blank'>Participant Information Sheet</a> for full details of the research project (of which the Linguistic Atlas of Judeo-Spanish is part) and your participation in it.</p>"
+"<p>By submitting this form, I understand that I am providing data for The Grammars of Judeo-Spanish research project, and that this data will be used for research purposes only, as explained in the <a href='/static/documents/participant-information-sheet.pdf' target='_blank'>Participant Information Sheet</a>.</p>"

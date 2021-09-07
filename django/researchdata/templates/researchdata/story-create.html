@@ -11,14 +11,14 @@
             {% translate 'ShareIntro' %}
         </p>
 
+        <h2>{% translate 'ShareTitle2' %}</h2>
         <form id="story-create-form" enctype="multipart/form-data" name="form" method="POST" action="{% url 'story-create' %}">
             {% csrf_token %}
             {{ form.as_p }}
-
-            <button id="story-create-submit" type="submit">{% translate 'ShareSubmit' %}</button>
             <div class="form-submit-notes">
                 {% translate 'ShareSubmitNotes' %}
             </div>
+            <button id="story-create-submit" type="submit">{% translate 'ShareSubmit' %}</button>
         </form>
 
     </div>
