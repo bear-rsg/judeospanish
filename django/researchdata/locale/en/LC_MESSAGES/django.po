@@ -132,23 +132,54 @@ msgstr "Share Your Story"
 msgid "ShareIntro"
 msgstr "<p>Have a story, recording or text you’d like to share? You can submit your stories, conversations, or personal narratives as text, as audio/video, or as text and audio/video. You can also submit an accompanying image. We also ask you to provide some brief information about the speaker (e.g. location) for it to appear on the atlas. Please note that we review all submissions prior to publication, so you should expect a short delay between submitting your story and it appearing on the atlas.</p>"
 "<p>Follow the instructions below to contribute your story to the atlas.</p>"
-"<p>Already have a video/audio you want to share?</p>"
-"<p><b>Yes:</b><br> If your video already has a URL, please complete the form at the bottom of this page to submit your story to the atlas.</p>"
-"<p>If your video does not already have a URL, please upload the file to YouTube (<a href='https://learn.g2.com/how-to-upload-a-video-to-youtube'>instructions here</a>), or to any other audio/video-hosting platform. Once uploaded, copy the URL. You can then complete the form at the bottom of this page to submit your story to the atlas.</p>"
-"<p><b>No, but I want to make one:</b><br><i>Instructions for recording:</i> Find a speaker who speaks a dialect of Judeo-Spanish (this could be yourself!) and is willing to make a short video or audio recording. The speaker can tell a story from their past or their current life (e.g. an event from their childhood or youth, a past memory, or family story passes down from an older generation), a short story (e.g. fairy tale) or can even invent one! We also welcome reflections about the language itself, including views about the language’s future. If there’s more than one speaker, you can also record a conversation.</p>"
-"<p>Record the speaker with your phone. Then upload the audio/video file to YouTube (<a href='https://learn.g2.com/how-to-upload-a-video-to-youtube'>instructions here</a>) or to any other audio/video-hosting platform. When the YouTube video is ready, copy the URL. You can then upload the recording to our website by completing the form at the bottom of this page</p>"
-"<p>If you are unable to upload your recording to YouTube, you can <a href='https://birminghamcoaal.eu.qualtrics.com/jfe/form/SV_3vEQ8b2WWiHESXQ'>send us your file here</a>. Please note that this will take us longer to process.</p>"
-"<p><b>No, I just want to share my story as a text:</b><br>Please complete the form at the bottom of this page to submit your story to the atlas.</p>"
+"<p><strong>Already have a video/audio you want to share?</strong></p>"
 
-#: researchdata/templates/researchdata/story-create.html:9
+
+#: researchdata/templates/researchdata/story-create.html:17
+msgid "ShareIntroVideoHeader"
+msgstr "Yes, I have a video recording"
+
+#: researchdata/templates/researchdata/story-create.html:21
+msgid "ShareIntroVideoBody"
+msgstr "<p>If your video already has a URL, please complete the form at the bottom of this page to submit your story to the atlas.</p>"
+"<p>If your video does not already have a URL, please upload the file to YouTube (<a href='https://learn.g2.com/how-to-upload-a-video-to-youtube'>instructions here</a>), or to any other audio/video-hosting platform. Once uploaded, copy the URL. You can then complete the form at the bottom of this page to submit your story to the atlas.</p>"
+"<p>When uploading, please ensure that you allow your video to be embedded in other websites, otherwise it won't display correctly on this website. If you've already uploaded the video you can edit this setting retrospectively."
+"<p>If you are unable to upload your recording to YouTube, you can <a href='https://birminghamcoaal.eu.qualtrics.com/jfe/form/SV_3vEQ8b2WWiHESXQ'>send us your file here</a>. Please note that this will take us longer to process.</p>"
+
+#: researchdata/templates/researchdata/story-create.html:26
+msgid "ShareIntroAudioHeader"
+msgstr "Yes, I have a audio recording"
+
+#: researchdata/templates/researchdata/story-create.html:30
+msgid "ShareIntroAudioBody"
+msgstr "<p>Audio can be uploaded via SoundCloud</p>"
+
+#: researchdata/templates/researchdata/story-create.html:26
+msgid "ShareIntroNoButWantToHeader"
+msgstr "No, but I want to make one"
+
+#: researchdata/templates/researchdata/story-create.html:30
+msgid "ShareIntroNoButWantToBody"
+msgstr "<p><i>Instructions for recording:</i> Find a speaker who speaks a dialect of Judeo-Spanish (this could be yourself!) and is willing to make a short video or audio recording. The speaker can tell a story from their past or their current life (e.g. an event from their childhood or youth, a past memory, or family story passes down from an older generation), a short story (e.g. fairy tale) or can even invent one! We also welcome reflections about the language itself, including views about the language’s future. If there’s more than one speaker, you can also record a conversation.</p>"
+"<p>Record the speaker with your phone. Then upload the audio/video file to YouTube (<a href='https://learn.g2.com/how-to-upload-a-video-to-youtube'>instructions here</a>) or to any other audio/video-hosting platform. When the YouTube video is ready, copy the URL. You can then upload the recording to our website by completing the form at the bottom of this page</p>"
+
+#: researchdata/templates/researchdata/story-create.html:26
+msgid "ShareIntroNoJustTextHeader"
+msgstr "No, I just want to share my story as text"
+
+#: researchdata/templates/researchdata/story-create.html:30
+msgid "ShareIntroNoJustTextBody"
+msgstr "<p>Please complete the form at the bottom of this page to submit your story to the atlas.</p>"
+
+#: researchdata/templates/researchdata/story-create.html:57
 msgid "ShareTitle2"
 msgstr "Your Story"
 
-#: researchdata/templates/researchdata/story-create.html:18
-msgid "ShareSubmit"
-msgstr "Submit"
-
-#: researchdata/templates/researchdata/story-create.html:20
+#: researchdata/templates/researchdata/story-create.html:62
 msgid "ShareSubmitNotes"
 msgstr "<p>Please read the <a href='/static/documents/participant-information-sheet.pdf' target='_blank'>Participant Information Sheet</a> for full details of the research project (of which the Linguistic Atlas of Judeo-Spanish is part) and your participation in it.</p>"
 "<p>By submitting this form, I understand that I am providing data for The Grammars of Judeo-Spanish research project, and that this data will be used for research purposes only, as explained in the <a href='/static/documents/participant-information-sheet.pdf' target='_blank'>Participant Information Sheet</a>.</p>"
+
+#: researchdata/templates/researchdata/story-create.html:64
+msgid "ShareSubmit"
+msgstr "Submit"

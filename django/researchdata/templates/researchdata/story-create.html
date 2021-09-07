@@ -11,6 +11,49 @@
             {% translate 'ShareIntro' %}
         </p>
 
+        <div class="accordian">
+            <!-- Video -->
+            <div class="accordian-item">
+                <div class="accordian-item-header">
+                    <span class="accordian-item-header-text">{% translate 'ShareIntroVideoHeader' %}</span>
+                    <span class="accordian-item-header-symbol">+</span>
+                </div>
+                <div class="accordian-item-body">
+                    {% translate 'ShareIntroVideoBody' %}
+                </div>
+            </div>
+            <!-- Audio -->
+            <div class="accordian-item">
+                <div class="accordian-item-header">
+                    <span class="accordian-item-header-text">{% translate 'ShareIntroAudioHeader' %}</span>
+                    <span class="accordian-item-header-symbol">+</span>
+                </div>
+                <div class="accordian-item-body">
+                    {% translate 'ShareIntroAudioBody' %}
+                </div>
+            </div>
+            <!-- No (but want to) -->
+            <div class="accordian-item">
+                <div class="accordian-item-header">
+                    <span class="accordian-item-header-text">{% translate 'ShareIntroNoButWantToHeader' %}</span>
+                    <span class="accordian-item-header-symbol">+</span>
+                </div>
+                <div class="accordian-item-body">
+                    {% translate 'ShareIntroNoButWantToBody' %}
+                </div>
+            </div>
+            <!-- No (just text) -->
+            <div class="accordian-item">
+                <div class="accordian-item-header">
+                    <span class="accordian-item-header-text">{% translate 'ShareIntroNoJustTextHeader' %}</span>
+                    <span class="accordian-item-header-symbol">+</span>
+                </div>
+                <div class="accordian-item-body">
+                    {% translate 'ShareIntroNoJustTextBody' %}
+                </div>
+            </div>
+        </div>
+
         <h2>{% translate 'ShareTitle2' %}</h2>
         <form id="story-create-form" enctype="multipart/form-data" name="form" method="POST" action="{% url 'story-create' %}">
             {% csrf_token %}

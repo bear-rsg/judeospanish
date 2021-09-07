@@ -17,4 +17,14 @@ $(document).ready(function() {
         }
     });
 
+    // Accordian
+    $('.accordian-item-header').on('click', function() {
+        // Toggle visibility of the body, which comes next after the header
+        $(this).next().slideToggle();
+        // Toggle icon
+        var headerSymbol = $(this).find('.accordian-item-header-symbol').first();
+        if (headerSymbol.text() == '+') headerSymbol.text('-');
+        else headerSymbol.text('+');
+    });
+
 });

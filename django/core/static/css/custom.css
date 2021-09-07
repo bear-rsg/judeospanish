@@ -69,6 +69,44 @@ h3 {
     height: 100%;
 }
 
+.accordian {
+    margin: 3em auto;
+}
+
+.accordian-item {
+    margin: 1em auto;
+}
+
+.accordian-item-header {
+    background: #f39c12;
+    color: black;
+    padding: 0.8em 1.2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.accordian-item-header:hover {
+    opacity: 0.9;
+}
+
+.accordian-item-header span {
+    display: inline-block;
+}
+
+.accordian-item-header-symbol {
+    float: right;
+    font-size: 1.8em;
+    margin-top: -0.3em;
+}
+
+.accordian-item-body {
+    background: rgba(255, 255, 255, 0.13);
+    padding: 1.5em;
+    display: none;
+}
+
+
 /* ---------- Forms ---------- */
 
 label {
