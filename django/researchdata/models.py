@@ -141,6 +141,9 @@ class ParticipationActivity(models.Model):
     # Admin fields
     admin_notes = models.TextField(blank=True, null=True)
 
+    class Meta:
+        verbose_name_plural = 'Participation Activities'
+
     def __str__(self):
         return self.name
 
@@ -154,8 +157,8 @@ class Participant(models.Model):
         """
         Choices of levels of knowledge of Judeo-Spanish
         """
-        NATIVE = 'NTV', "I learned Judeo-Spanish as a native/home language in childhood"
-        LATER = 'LTR', "I learned Judeo-Spanish as a non-native language later in life"
+        NATIVE = 'NTV', "I learned Judeo-Spanish in childhood as a first (native) /home language"
+        LATER = 'LTR', "I learned/studied Judeo-Spanish later in life as an additional (non-native) language"
         NEVER = 'NVR', "I don't know Judeo-Spanish"
 
     name = CharField(max_length=100, blank=True, null=True)
@@ -183,6 +186,7 @@ class Participant(models.Model):
                                             null=True,
                                             verbose_name='By what name(s) do you call Judeo-Spanish?')
     languages = models.ManyToManyField(Language, related_name="participant", blank=True)
+    languages_other = models.CharField(max_length=255, blank=True, null=True)
     participation_activities = models.ManyToManyField(ParticipationActivity, related_name="participant", blank=True)
     comments = models.TextField()
 

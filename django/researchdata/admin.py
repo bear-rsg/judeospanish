@@ -47,6 +47,20 @@ class StoryAdminView(admin.ModelAdmin):
     actions = (admin_publish_selected, admin_unpublish_selected)
 
 
+class ParticipationActivityAdminView(admin.ModelAdmin):
+    list_display = ('name', 'admin_notes')
+    search_fields = ('name', 'admin_notes')
+    ordering = ('name',)
+
+
+class ParticipantAdminView(admin.ModelAdmin):
+    list_display = ('name', 'email')
+    search_fields = ('name', 'emai', 'admin_notes')
+    ordering = ('name',)
+
+
 admin.site.register(models.Language, LanguageAdminView)
 admin.site.register(models.Location, LocationAdminView)
 admin.site.register(models.Story, StoryAdminView)
+admin.site.register(models.ParticipationActivity, ParticipationActivityAdminView)
+admin.site.register(models.Participant, ParticipantAdminView)

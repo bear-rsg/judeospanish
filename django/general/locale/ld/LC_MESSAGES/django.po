@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-06 10:49+0100\n"
+"POT-Creation-Date: 2021-09-07 15:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,28 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: general/templates/general/about.html:10
+msgid "AboutProject"
+msgstr ""
+
+#: general/templates/general/about.html:13
+#, fuzzy
+#| msgid "ProjectTitle1"
+msgid "AboutProjectTeam"
+msgstr "Atlas Linguistiko de las Avlas"
+
+#: general/templates/general/about.html:18
+msgid "AboutContact1"
+msgstr ""
+
+#: general/templates/general/about.html:21
+msgid "AboutContact2"
+msgstr ""
+
+#: general/templates/general/about.html:24
+msgid "AboutContact3"
+msgstr ""
 
 #: general/templates/general/welcome.html:9
 msgid "ProjectTitle1"
@@ -25,30 +47,30 @@ msgstr "Atlas Linguistiko de las Avlas"
 msgid "ProjectTitle2"
 msgstr "Djudeo-Espanyolas"
 
-#: general/templates/general/welcome.html:17
+#: general/templates/general/welcome.html:14
 msgid "WelcomeHeading"
 msgstr ""
 
-#: general/templates/general/welcome.html:19
+#: general/templates/general/welcome.html:16
 msgid "WelcomeMessage1"
 msgstr ""
 
-#: general/templates/general/welcome.html:22
+#: general/templates/general/welcome.html:19
 msgid "WelcomeMessage2"
 msgstr ""
 
-#: general/templates/general/welcome.html:23
+#: general/templates/general/welcome.html:20
 msgid "WelcomeMessage3"
 msgstr ""
 
-#: general/templates/general/welcome.html:26
+#: general/templates/general/welcome.html:23
 msgid "WelcomeMessage4"
 msgstr ""
 
-#: general/templates/general/welcome.html:27
+#: general/templates/general/welcome.html:24
 msgid "WelcomeMessage5"
 msgstr ""
 
-#: general/templates/general/welcome.html:30
+#: general/templates/general/welcome.html:27
 msgid "WelcomeMessage6"
 msgstr ""

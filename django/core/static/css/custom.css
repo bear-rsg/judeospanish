@@ -69,6 +69,44 @@ h3 {
     height: 100%;
 }
 
+.accordion {
+    margin: 3em auto;
+}
+
+.accordion-item {
+    margin: 1em auto;
+}
+
+.accordion-item-header {
+    background: #f39c12;
+    color: black;
+    padding: 0.8em 1.2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.accordion-item-header:hover {
+    opacity: 0.9;
+}
+
+.accordion-item-header span {
+    display: inline-block;
+}
+
+.accordion-item-header-symbol {
+    float: right;
+    font-size: 1.8em;
+    margin-top: -0.3em;
+}
+
+.accordion-item-body {
+    background: rgba(255, 255, 255, 0.13);
+    padding: 1.5em;
+    display: none;
+}
+
+
 /* ---------- Forms ---------- */
 
 label {
@@ -269,10 +307,15 @@ main a {
     opacity: 1;
 }
 
-#welcome-banner-tagline {
+#welcome-enteratlas {
+    display: block;
+    font-size: 1.2em;
+    padding: 1.3em;
+    width: 13em;
     text-align: center;
-    opacity: 0.7;
-    font-weight: 300;
+    margin: 4em auto;
+    background: #f39c12;
+    color: black;
 }
 
 /* ---------- About ---------- */
