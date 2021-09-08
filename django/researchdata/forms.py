@@ -81,6 +81,8 @@ class ParticipantCreateForm(forms.ModelForm):
                                                widget=forms.CheckboxSelectMultiple,
                                                help_text=_('Select all that apply'),
                                                required=False)
+    languages_other = forms.CharField(label=_('Languages known (if not available above)'),
+                                             required=False)
     participation_activities = forms.ModelMultipleChoiceField(label=_("I'm interested in participating in"),
                                                               queryset=models.ParticipationActivity.objects,
                                                               widget=forms.CheckboxSelectMultiple,
@@ -102,5 +104,6 @@ class ParticipantCreateForm(forms.ModelForm):
                   'knowledge_of_judeospanish',
                   'name_of_judeospanish',
                   'languages',
+                  'languages_other',
                   'participation_activities',
                   'comments')

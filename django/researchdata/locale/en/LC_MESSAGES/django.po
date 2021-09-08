@@ -187,7 +187,7 @@ msgstr "Yes, I have a audio recording"
 
 #: researchdata/templates/researchdata/story-create.html:32
 msgid "ShareIntroAudioBody"
-msgstr "<p>Audio can be uploaded via SoundCloud</p>"
+msgstr "<p>Audio can be uploaded to <a href='https://soundcloud.com/upload'>SoundCloud</a>. Once uploaded, please go to your SoundCloud audio file page, click Share, then click Embed, and then copy and paste the contents of the Code box into the form below.</p>"
 
 #: researchdata/templates/researchdata/story-create.html:38
 msgid "ShareIntroNoButWantToHeader"
