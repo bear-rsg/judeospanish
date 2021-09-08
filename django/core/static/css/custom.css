@@ -69,15 +69,15 @@ h3 {
     height: 100%;
 }
 
-.accordian {
+.accordion {
     margin: 3em auto;
 }
 
-.accordian-item {
+.accordion-item {
     margin: 1em auto;
 }
 
-.accordian-item-header {
+.accordion-item-header {
     background: #f39c12;
     color: black;
     padding: 0.8em 1.2em;
@@ -86,21 +86,21 @@ h3 {
     cursor: pointer;
 }
 
-.accordian-item-header:hover {
+.accordion-item-header:hover {
     opacity: 0.9;
 }
 
-.accordian-item-header span {
+.accordion-item-header span {
     display: inline-block;
 }
 
-.accordian-item-header-symbol {
+.accordion-item-header-symbol {
     float: right;
     font-size: 1.8em;
     margin-top: -0.3em;
 }
 
-.accordian-item-body {
+.accordion-item-body {
     background: rgba(255, 255, 255, 0.13);
     padding: 1.5em;
     display: none;
