@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-06 12:44+0100\n"
+"POT-Creation-Date: 2021-09-07 15:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,44 +20,51 @@ msgstr ""
 
 #: general/templates/general/about.html:10
 msgid "AboutProject"
-msgstr "<h2>The Project</h2>"
-"<p>Led by Dr Alice Corr at the University of Birmingham, The Grammars of "
-"Judeo-Spanish is a documentation project which seeks to identify and map out "
-"the grammatical landscape of Judeo-Spanish varieties as they are spoken and "
-"written today. Whilst there are many reasons why such work is valuable, this "
-"project is particularly concerned with the following benefits:</"
-"p><ul><li><b>Fostering language survivance:</b> Because most Judeo-Spanish "
-"research focuses on other aspects of the linguistic system we simply do not "
-"know what the overall grammatical landscape of Judeo-Spanish looks like. "
-"Without a detailed or accurate knowledge of what Judeo-Spanish's sentence-"
-"level grammar is, the language cannot be taught or passed on to new learners "
-"or future generations. Providing a description of grammatical description "
-"can support community efforts to create and disseminate learning resources "
-"and other language survivance activities important to those for whom Judeo-"
-"Spanish is a component of their cultural and ancestral heritage and/or way "
-"of life.</li><li><b>Language policy for historic and minoritized languages:</"
-"b> Providing linguistically accurate data for Judeo-Spanish will promote "
+msgstr ""
+"<h2>The Project</h2><p>The Linguistic Atlas of Judeo-Spanishes forms part of "
+"The Grammars of Judeo-Spanish research project. Led by Dr Alice Corr at the "
+"University of Birmingham, The Grammars of Judeo-Spanish is a documentation "
+"project which seeks to identify and map out the grammatical landscape of "
+"Judeo-Spanish varieties as they are spoken and written today. Whilst there "
+"are many reasons why such work is valuable, this project is particularly "
+"concerned with the following benefits:</p><ul><li><b>Fostering language "
+"survivance:</b> Because most Judeo-Spanish research focuses on other aspects "
+"of the linguistic system we simply do not know what the overall grammatical "
+"landscape of Judeo-Spanish looks like. Without a detailed or accurate "
+"knowledge of what Judeo-Spanish's sentence-level grammar is, the language "
+"cannot be taught or passed on to new learners or future generations. "
+"Providing a description of grammatical description can support community "
+"efforts to create and disseminate learning resources and other language "
+"survivance activities important to those for whom Judeo-Spanish is a "
+"component of their cultural and ancestral heritage and/or way of life.</"
+"li><li><b>Language policy for historic and minoritized languages:</b> "
+"Providing linguistically accurate data for Judeo-Spanish will promote "
 "evidence-based policymaking, by providing the necessary data with which to "
 "determine its linguistic classification and (re-)evaluate its official/"
 "recognised status in line with national and international language policies."
-"</li><p>The virtual linguistic atlas brings together a range of stories and "
-"personal narratives from members of Judeo-Spanish speaking diaspora. It "
+"</li></ul><p>The virtual linguistic atlas brings together a range of stories "
+"and personal narratives from members of Judeo-Spanish speaking diaspora. It "
 "collates existing recordings of Judeo-Spanish speakers with new, "
 "crowdsourced recordings and texts, providing an interactive, contemporary "
 "snapshot, and a major new dataset, of how current generations of Judeo-"
-"Spanish speak and write in this important historical language.</p><p>Hosted "
-"by the University of Birmingham, Grammars of Judeo-Spanish is generously "
-"funded by a British Academy and Leverhulme Trust grant.</p>"
+"Spanish speak and write in this important historical language. Collecting "
+"and sharing stories via the Linguistic atlas is part of the wider project’s "
+"aims to document the grammatical landscape of Judeo-Spanish, and to record, "
+"share and celebrate the cultural heritage and diversity of the Judeo-Spanish "
+"speaking diaspora.</p><p>Hosted by the University of Birmingham, Grammars of "
+"Judeo-Spanish is generously funded by a British Academy and Leverhulme Trust "
+"grant.</p>"
 
 #: general/templates/general/about.html:13
 msgid "AboutProjectTeam"
-msgstr "<h2>Project Team</h2>"
-"<p><b>Principal Investigator:</b> Dr Alice Corr, University of Birmingham</"
-"p><p><b>Research Assistant:</b> Dr Carlos Yebra López, University of "
-"Birmingham and New York University</p><p><b>Undergraduate research assistant:"
-"</b> Mikey Barnes, University of Birmingham</p>"
+msgstr ""
+"<h2>Project Team</h2><p><b>Principal Investigator:</b> Dr Alice Corr, "
+"University of Birmingham</p><p><b>Research Assistant:</b> Dr Carlos Yebra "
+"López, University of Birmingham and New York University</"
+"p><p><b>Undergraduate research assistant:</b> Mikey Barnes, University of "
+"Birmingham</p>"
 
-#: general/templates/general/about.html:17
+#: general/templates/general/about.html:18
 msgid "AboutContact1"
 msgstr ""
 "We are particularly interested in hearing from <b>native speakers</b> and "
@@ -66,22 +73,23 @@ msgstr ""
 "activists, researchers and educators</b> who are already working on Judeo-"
 "Spanish."
 
-#: general/templates/general/about.html:20
+#: general/templates/general/about.html:21
 msgid "AboutContact2"
 msgstr ""
-"If you're interested in getting involved in this project, please contact the "
-"Principal Investigator (Dr. Alice Corr) at a.corr@bham.ac.uk and/or "
-
-#: general/templates/general/about.html:21
-msgid "AboutContact3"
-msgstr "register your interest here."
+"If you're interested in getting involved in this project, please <a href='/"
+"participate'>register your interest here</a>, or contact the Principal "
+"Investigator (Dr. Alice Corr) at <a href='mailto:a.corr@bham.ac.uk'>a."
+"corr@bham.ac.uk</a>."
 
 #: general/templates/general/about.html:24
-msgid "AboutContact4"
+msgid "AboutContact3"
 msgstr ""
-"For all other enquiries, please contact the Principal Investigator (Dr. Alice Corr) at a.corr@bham.ac.uk"
-"<br><br>You can also follow updates from the project on Twitter <a href='https://twitter.com/linguafrancabhm'>@linguafrancabhm</a>."
-"<br><br>Postal address: Ashley Building, University of Birmingham, Edgbaston, B15 2TT, UK."
+"For all other enquiries, please contact the Principal Investigator (Dr. "
+"Alice Corr) at <a href='mailto:a.corr@bham.ac.uk'>the above email address</"
+"a>.<br><br>You can also follow updates from the project on Twitter <a "
+"href='https://twitter.com/linguafrancabhm'>@linguafrancabhm</a>."
+"<br><br>Postal address: Ashley Building, University of Birmingham, "
+"Edgbaston, B15 2TT, UK."
 
 #: general/templates/general/welcome.html:9
 msgid "ProjectTitle1"
@@ -91,11 +99,11 @@ msgstr "Linguistic atlas of"
 msgid "ProjectTitle2"
 msgstr "Judeo-Spanishes"
 
-#: general/templates/general/welcome.html:17
+#: general/templates/general/welcome.html:14
 msgid "WelcomeHeading"
 msgstr "Welcome"
 
-#: general/templates/general/welcome.html:19
+#: general/templates/general/welcome.html:16
 msgid "WelcomeMessage1"
 msgstr ""
 "This virtual linguistic atlas contains recordings and texts of stories and "
@@ -104,7 +112,7 @@ msgstr ""
 "seeks to identify and map out the grammatical landscape of Judeo-Spanish "
 "varieties as they are spoken and written today."
 
-#: general/templates/general/welcome.html:22
+#: general/templates/general/welcome.html:19
 msgid "WelcomeMessage2"
 msgstr ""
 "We welcome contributions from language users of any variety of Judeo-Spanish "
@@ -112,20 +120,20 @@ msgstr ""
 "in childhood, or learned it later in life, we would love to receive your "
 "stories!"
 
-#: general/templates/general/welcome.html:23
+#: general/templates/general/welcome.html:20
 msgid "WelcomeMessage3"
-msgstr "Share your story here"
+msgstr "You can share your story here."
 
-#: general/templates/general/welcome.html:26
+#: general/templates/general/welcome.html:23
 msgid "WelcomeMessage4"
 msgstr ""
 "You can also get involved in our grammatical documentation research survey "
 "by "
 
-#: general/templates/general/welcome.html:27
+#: general/templates/general/welcome.html:24
 msgid "WelcomeMessage5"
-msgstr "registering your interest here"
+msgstr "registering your interest here."
 
-#: general/templates/general/welcome.html:30
+#: general/templates/general/welcome.html:27
 msgid "WelcomeMessage6"
 msgstr "Enter the atlas"

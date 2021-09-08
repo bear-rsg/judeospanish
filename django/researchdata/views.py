@@ -34,7 +34,7 @@ class StoryListView(ListView):
     Stories are grouped by location, which is why model = Location
     """
     template_name = 'researchdata/story-list.html'
-    model = models.Location
+    queryset = models.Location.objects.filter(story__isnull=False, story__admin_published=True)
 
 
 class ParticipantCreateView(CreateView):
