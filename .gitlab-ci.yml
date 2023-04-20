@@ -7,6 +7,7 @@ Django Tests:
   before_script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
+    - pip install -r requirements-test.txt
   script:
     - cd django
     - mv core/local_settings.test.py core/local_settings.py
@@ -31,6 +32,7 @@ accessibility:
     - npm install --prefix ./ pa11y-ci
     - pip install --upgrade pip
     - pip install -r requirements.txt
+    - pip install -r requirements-test.txt
   script:
     - cd django
     - mv core/local_settings.test.py core/local_settings.py
