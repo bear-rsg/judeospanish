@@ -1,7 +1,8 @@
 from django import forms
 from . import models
-from captcha.fields import ReCaptchaField, ReCaptchaV3
-from django.utils.translation import ugettext_lazy as _
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV3
+from django.utils.translation import gettext_lazy as _
 
 
 class StoryCreateForm(forms.ModelForm):
@@ -15,10 +16,11 @@ class StoryCreateForm(forms.ModelForm):
                                help_text=_('e.g. https://youtube.com/examplevideo. \
                                             Please remember to allow embedding permissions on your video.'),
                                required=False)
-    audio_player_embed_code = forms.CharField(label=_('SoundCloud audio embed code'),
-                                              help_text=_('e.g. Go to your SoundCloud audio file page, click Share, then click Embed, \
-                                              and then copy and paste the contents of the Code box here'),
-                                              required=False)
+    audio_player_embed_code = forms.CharField(
+        label=_('SoundCloud audio embed code'),
+        help_text=_('e.g. Go to your SoundCloud audio file page, click Share, then click Embed, \
+                     and then copy and paste the contents of the Code box here'),
+        required=False)
     location_other = forms.CharField(label=_('Location (if not available above)'),
                                      required=False)
     knowledge_of_judeospanish = forms.ChoiceField(choices=models.Story.KnowledgeOfJudeoSpanish.choices,
